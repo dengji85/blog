@@ -8,10 +8,10 @@
 
 prettyPrint();
 layui.use(['form', 'layedit'], function () {
-    var form = layui.form();
+    var form = layui.form;
     var $ = layui.jquery;
     var layedit = layui.layedit;
-
+$("#wz").addClass("layui-this");
     //评论和留言的编辑器
     var editIndex = layedit.build('remarkEditor', {
         height: 150,

@@ -8,37 +8,39 @@
 
 layui.use('jquery', function () {
     var $ = layui.jquery;
+    //设置当前类型
+    $("#sy").addClass("layui-this");
     $(function () {
-        //播放公告
+        // 播放公告
         playAnnouncement(3000);
     });
     function playAnnouncement(interval) {
         var index = 0;
         var $announcement = $('.home-tips-container>span');
-        //自动轮换
+        // 自动轮换
         setInterval(function () {
-            index++;    //下标更新
+            index++;    // 下标更新
             if (index >= $announcement.length) {
                 index = 0;
             }
-            $announcement.eq(index).stop(true, true).fadeIn().siblings('span').fadeOut();  //下标对应的图片显示，同辈元素隐藏
+            $announcement.eq(index).stop(true, true).fadeIn().siblings('span').fadeOut();  // 下标对应的图片显示，同辈元素隐藏
         }, interval);
     }
-    //画canvas
+    // 画canvas
     DrawCanvas();
 });
 
 function DrawCanvas() {
     var $ = layui.jquery;
     var canvas = document.getElementById('canvas-banner');
-    canvas.width = window.document.body.clientWidth;    //需要重新设置canvas宽度，因为dom加载完毕后有可能没有滚动条
+    canvas.width = window.document.body.clientWidth;    // 需要重新设置canvas宽度，因为dom加载完毕后有可能没有滚动条
     var ctx = canvas.getContext('2d');
 
     ctx.strokeStyle = (new Color(150)).style;
 
-    var dotCount = 20; //圆点数量
-    var dotRadius = 70; //产生连线的范围
-    var dotDistance = 70;   //产生连线的最小距离
+    var dotCount = 20; // 圆点数量
+    var dotRadius = 70; // 产生连线的范围
+    var dotDistance = 70;   // 产生连线的最小距离
     var screenWidth = screen.width;
     if (screenWidth >= 768 && screenWidth < 992) {
         dotCount = 130;
@@ -57,12 +59,12 @@ function DrawCanvas() {
         dotRadius = 150;
         dotDistance = 80;
     } 
-    //默认鼠标位置 canvas 中间
+    // 默认鼠标位置 canvas 中间
     var mousePosition = {
         x: 50 * canvas.width / 100,
         y: 50 * canvas.height / 100
     };
-    //小圆点
+    // 小圆点
     var dots = {
         count: dotCount,
         distance: dotDistance,
@@ -181,13 +183,13 @@ function DrawCanvas() {
 
         requestAnimationFrame(animateDots);
     }
-    //鼠标在canvas上移动
+    // 鼠标在canvas上移动
     $('canvas').on('mousemove', function (e) {
         mousePosition.x = e.pageX;
         mousePosition.y = e.pageY;
     });
 
-    //鼠标移出canvas
+    // 鼠标移出canvas
     $('canvas').on('mouseleave', function (e) {
         mousePosition.x = canvas.width / 2;
         mousePosition.y = canvas.height / 2;
@@ -198,12 +200,40 @@ function DrawCanvas() {
     requestAnimationFrame(animateDots);
 }
 
-//监听窗口大小改变
+// 监听窗口大小改变
 window.addEventListener("resize", resizeCanvas, false);
 
-//窗口大小改变时改变canvas宽度
+// 窗口大小改变时改变canvas宽度
 function resizeCanvas() {
     var canvas = document.getElementById('canvas-banner');
     canvas.width = window.document.body.clientWidth;
     canvas.height = window.innerHeight * 1 / 3;
 }
+
+
+layui.use(['laypage','jquery'], function(){
+	
+	var strFullPath = window.document.location.href;
+	var strPath = window.document.location.pathname;
+	var pos = strFullPath.indexOf(strPath);
+	var prePath = strFullPath.substring(0, pos);
+	var postPath = strPath.substring(0, strPath.substr(1).indexOf('/') + 1);
+	var basePath = prePath;
+	basePath = prePath + postPath;
+	console.log(basePath);
+	  var laypage = layui.laypage;
+	  var $=layui.jquery;
+	  // 执行一个laypage实例
+	  laypage.render({
+		  limit:7,
+		  curr:$("#page").val(),
+		    elem: '_page' // 注意，这里的 test1 是 ID，不用加 # 号
+		    ,count: $("#count").val() // 数据总数，从服务端得到
+		   , jump: function(obj,first){// 点击页码出发的事件
+                if(first!=true){// 是否首次进入页面
+                    var currentPage = obj.curr;// 获取点击的页码
+                    window.location.href =basePath+"/index?page="+currentPage;  
+                }  
+    }  
+		  });
+	});

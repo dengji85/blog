@@ -1,0 +1,71 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>羊哇博客</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="blog|java |资源共享|宅男福利|个人博客" />
+<meta name="author" content="" />
+<!-- <link rel="shortcut icon" href="/images/Logo_40.png" type="image/x-icon"> -->
+<!--Layui-->
+<link th:href="@{/plug/layui/css/layui.css}" rel="stylesheet" />
+<!--font-awesome-->
+<link th:href="@{/plug/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet" />
+<!--全局样式表-->
+<link th:href="@{/css/global.css}" rel="stylesheet" />
+<!-- 本页样式表 -->
+<link th:href="@{/css/home.css}" rel="stylesheet" />
+
+<script>
+	var _hmt = _hmt || [];
+	(function() {
+		var hm = document.createElement("script");
+		hm.src = "https://hm.baidu.com/hm.js?0e6192cc99ff5db49ef68dab8d25acc6";
+		var s = document.getElementsByTagName("script")[0];
+		s.parentNode.insertBefore(hm, s);
+	})();
+</script>
+
+</head>
+
+<body>
+	<nav class="blog-nav layui-header" th:fragment="header">
+		<div class="blog-container">
+			QQ互联登陆 <a href="javascript:;" class="blog-user"> <i
+				class="fa fa-qq"></i>
+			</a> <a href="javascript:;" class="blog-user layui-hide"> <img
+				src="images/Absolutely.jpg" alt="Absolutely" title="Absolutely" />
+			</a> 不落阁 <a class="blog-logo" href="home.html" th:href="@{/index}">羊哇</a>
+			导航菜单
+			<ul class="layui-nav" lay-filter="nav">
+				<li id="sy" class="layui-nav-item "><a href="home.html"
+					th:href="@{/index}"><i class="fa fa-home fa-fw"></i>&nbsp;网站首页</a>
+				</li>
+				<li id="wz" class="layui-nav-item"><a th:href="@{/article/page}" href="article.html"><i
+						class="fa fa-file-text fa-fw"></i>&nbsp;文章专栏</a></li>
+				<li id="zy" class="layui-nav-item"><a href="resource.html"><i
+						class="fa fa-tags fa-fw"></i>&nbsp;资源分享</a></li>
+				<li id="dd" class="layui-nav-item"><a href="timeline.html"><i
+						class="fa fa-hourglass-half fa-fw"></i>&nbsp;点点滴滴</a></li>
+				<li id="gy" class="layui-nav-item"><a href="about.html"><i
+						class="fa fa-info fa-fw"></i>&nbsp;关于本站</a></li>
+			</ul>
+			手机和平板的导航开关 <a class="blog-navicon" href="javascript:;"> <i
+				class="fa fa-navicon"></i>
+			</a>
+		</div>
+	</nav>
+
+	<footer class="blog-footer" th:fragment="footer">
+		<p>
+			<span>Copyright</span><span>&copy;</span><span>2017</span> <a
+				href="http://www.lyblogs.cn"></a><span>Design By 羊哇</span>
+		</p>
+		<p>
+			<a href="http://www.miibeian.gov.cn/" target="_blank">蜀ICP备16029915号-1</a>
+		</p>
+	</footer>
+</body>
+</html>

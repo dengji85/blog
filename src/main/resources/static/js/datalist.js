@@ -11,6 +11,12 @@ layui.define(['laypage', 'layer', 'form', 'pagesize'], function (exports) {
         layer = layui.layer,
         form = layui.form(),
         laypage = layui.laypage;
+    
+    
+    
+    
+    
+    
     var laypageId = 'pageNav';
 
     initilData(1, 8);

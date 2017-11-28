@@ -26,10 +26,20 @@
 <link th:href="@{/css/global.css}" rel="stylesheet" />
 <!-- 本页样式表 -->
 <link th:href="@{/css/timeline.css}" rel="stylesheet" />
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?0e6192cc99ff5db49ef68dab8d25acc6";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
 </head>
 <body>
 	<!-- 导航 -->
-	<div th:replace="/common/layout :: header"></div>
+	<div th:replace="common/layout :: header"></div>
 	<!-- 主体（一般只改变这里的内容） -->
 	<div class="blog-body">
 		<div class="blog-container">
@@ -85,7 +95,7 @@
 		</div>
 	</div>
 	<!-- 底部 -->
-	<div th:replace="/common/layout:: footer"></div>
+	<div th:replace="common/layout:: footer"></div>
 	<!--侧边导航-->
 	<ul
 		class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide"

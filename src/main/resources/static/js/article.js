@@ -23,7 +23,7 @@
 		   , jump: function(obj,first){// 点击页码出发的事件
                 if(first!=true){// 是否首次进入页面
                     var currentPage = obj.curr;// 获取点击的页码
-                    window.location.href =basePath+"/page?page="+currentPage+"&type="+$("#type").val()+"&keyWords="+$("#keyWords").val;  
+                    window.location.href =basePath+"/page?page="+currentPage+"&type="+$("#type").val()+"&keyWords="+$("#keyWords").val();  
                 }  
     }  
 		  });

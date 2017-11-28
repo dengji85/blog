@@ -30,9 +30,9 @@ public class BlogApplicationTests {
 	@Rollback(true)
 	public void testArticleService() {
 
-		Article article = new Article();
+		/*Article article = new Article();
 		article.setDescription("test");
-		this.articleMapper.insertSelective(article);
+		this.articleMapper.insertSelective(article);*/
 	}
 
 }

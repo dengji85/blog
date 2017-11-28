@@ -40,7 +40,7 @@
 		<script src="/plug/layui/layui.js"></script>
 		<!-- layui规范化用法 -->
 		<script type="text/javascript">
-			layui.use('table', function() {
+			layui.use(['table','jquery'], function() {
 
 				var table = layui.table;
 				var $ = layui.$;
@@ -99,13 +99,15 @@
 
 				var active = {
 					add: function() {
+						$('iframe',window.parent.document).attr('src',basePath + "/article/toAdd");
+						//location.href = basePath + "/article/toAdd";
 
-						layer.open({
+						/* layer.open({
 							area: ['950px', '400px'],
 							type: 2,
 							maxmin: true,
 							content: [basePath + "/article/toAdd", 'yes'] //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
-						});
+						}); */
 					},
 					del: function() {
 

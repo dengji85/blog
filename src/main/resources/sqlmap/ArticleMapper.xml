@@ -580,8 +580,11 @@
 		WHERE 1=1
 		AND
 		a.DEL_FLAG = 0
-		<if test="type!= null">
+		<if test="type!= null and type!=''">
 			AND a.TYPE = #{type}
+		</if>
+		<if test="keyWords!= null and keyWords!=''">
+			AND a.KEY_WORDS LIKE CONCAT(';%',#{keyWords},'%;')
 		</if>
 		ORDER BY
 		<if test="orderNo!= null">
@@ -605,10 +608,12 @@
 		WHERE 1=1
 		AND
 		a.DEL_FLAG = 0
-		<if test="type!= null">
+		<if test="type!= null and type!=''">
 			AND a.TYPE = #{type}
 		</if>
-
+		<if test="keyWords!= null and keyWords!=''">
+			AND a.KEY_WORDS LIKE CONCAT(';%',#{keyWords},'%;')
+		</if>
 	</select>
 
 	<select id="searchByParam" parameterType="com.dengji85.blog.param.ArticleParam"
@@ -623,7 +628,7 @@
 		AND d.CLASS_CODE = "ARTICLE_TYPE"
 		WHERE 1=1
 		AND a.DEL_FLAG = 0
-		<if test="type!= null">
+		<if test="type!= null and type!=''">
 			AND a.TYPE = #{type}
 		</if>
 		<if test="id!= null">

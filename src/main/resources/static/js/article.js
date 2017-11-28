@@ -1,5 +1,6 @@
-﻿layui.use(['laypage','jquery'], function(){
-	
+﻿layui.use(['laypage','jquery','form'], function(){
+	 var form = layui.form;
+	 
 	var strFullPath = window.document.location.href;
 	var strPath = window.document.location.pathname;
 	var pos = strFullPath.indexOf(strPath);
@@ -22,8 +23,13 @@
 		   , jump: function(obj,first){// 点击页码出发的事件
                 if(first!=true){// 是否首次进入页面
                     var currentPage = obj.curr;// 获取点击的页码
-                    window.location.href =basePath+"/page?page="+currentPage;  
+                    window.location.href =basePath+"/page?page="+currentPage+"&type="+$("#type").val()+"&keyWords="+$("#keyWords").val;  
                 }  
     }  
 		  });
+	  
+	  //一些事件监听
+	  form.on('submit(formSearch)', function(data){
+		  window.location.href =basePath+"/page?keyWords="+data.field.keyWords;
+	  });
 	});

@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.dengji85.blog.mapper.ArticleMapper;
@@ -13,6 +14,7 @@ import com.dengji85.blog.service.ArticleService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
+@MapperScan("com.dengji85.blog.mapper")
 public class BlogApplicationTests {
 	@Autowired
 	private ArticleService articleService;
@@ -25,6 +27,7 @@ public class BlogApplicationTests {
 	}
 
 	@Test
+	@Rollback(true)
 	public void testArticleService() {
 
 		Article article = new Article();

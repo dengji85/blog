@@ -22,7 +22,7 @@
 
 	<body>
 		<!-- 导航 -->
-		<div th:replace="/common/layout :: header"></div>
+		<div th:replace="common/layout :: header"></div>
 		<!-- 主体（一般只改变这里的内容） -->
 		<div class="blog-body">
 			<!-- canvas -->
@@ -70,9 +70,9 @@
 								</div>
 								<div class="clear"></div>
 								<div class="article-footer">
-									<span th:text="${art.addTimeStr}"><i class="fa fa-clock-o"></i>&nbsp;&nbsp;2017-11-18</span>
-									<span th:text="${art.author}" class="article-author"><i class="fa fa-user"></i>&nbsp;&nbsp;Absolutely</span>
-									<span th:text="${art.typeName}"><i class="fa fa-tag"></i>&nbsp;&nbsp;<a href="#" th:text="${art.typeName}">Web12前端</a></span>
+									<span ><i th:text="${art.addTimeStr}" class="fa fa-clock-o">&nbsp;&nbsp;2017-11-18</i></span>
+									<span  class="article-author"><i th:text="${art.author}" class="fa fa-user">&nbsp;&nbsp;Absolutely</i></span>
+									<span ><i class="fa fa-tag"></i>&nbsp;&nbsp;<a th:href="@{/article/page(type=${art.type})}" href="#" th:text="${art.typeName}">Web12前端</a></span>
 									
 
 									<span class="article-viewinfo" ><i th:text="${art.viewNum}" class="fa fa-eye"></i></span>
@@ -191,7 +191,7 @@
 			</div>
 		</div>
 		<!-- 底部 -->
-		<div th:replace="/common/layout:: footer"></div>
+		 <div th:replace="common/layout:: footer"></div> 
 		<!--侧边导航-->
 		<ul class="layui-nav layui-nav-tree layui-nav-side blog-nav-left layui-hide" lay-filter="nav">
 			<li class="layui-nav-item layui-this">

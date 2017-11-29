@@ -9,5 +9,6 @@ public interface ArticleService {
 	public void addArtice(Article article);
 	public ArticleResultMap searchByParam(ArticleParam param);
 	public AjaxPagerResult<ArticleResultMap> page(ArticleParam param);
-
+	public void deleteArticleById(Long id);
+	public void updateArtice(Article article);
 }

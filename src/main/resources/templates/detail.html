@@ -240,9 +240,9 @@ pagesize(laypageId, pageSize).callback(function (newPageSize) {
     <!--遮罩-->
     <div class="blog-mask animated layui-hide"></div>
     <!-- layui.js -->
-    <script src="../plug/layui/layui.js"></script>
-    <!-- 自定义全局脚本 -->
-    <script src="../js/global.js"></script>
+	<script th:attr="src=@{/plug/layui/layui.js}" src="plug/layui/layui.js"></script>
+	<!-- 全局脚本 -->
+	<script th:attr="src=@{/js/global.js}" src="js/global.js"></script>
     <!-- 比较好用的代码着色插件 -->
     <script src="../js/prettify.js"></script>
     <!-- 本页脚本 -->

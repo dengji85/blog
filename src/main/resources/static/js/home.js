@@ -10,6 +10,7 @@ layui.use('jquery', function () {
     var $ = layui.jquery;
     //设置当前类型
     $("#sy").addClass("layui-this");
+     $("#s_sy").addClass("layui-this");
     $(function () {
         // 播放公告
         playAnnouncement(3000);

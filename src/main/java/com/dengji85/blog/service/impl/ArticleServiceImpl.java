@@ -1,9 +1,13 @@
 package com.dengji85.blog.service.impl;
 
+import java.util.Date;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.dengji85.blog.common.AjaxPagerResult;
+import com.dengji85.blog.common.BlogConstants;
+import com.dengji85.blog.exception.MessageException;
 import com.dengji85.blog.mapper.ArticleMapper;
 import com.dengji85.blog.model.Article;
 import com.dengji85.blog.param.ArticleParam;
@@ -17,6 +21,7 @@ public class ArticleServiceImpl implements ArticleService {
 
 	@Override
 	public void addArtice(Article article) {
+		article.setAddTime(new Date());
 		this.articleMapper.insertSelective(article);
 	}
 
@@ -34,6 +39,24 @@ public class ArticleServiceImpl implements ArticleService {
 	@Override
 	public ArticleResultMap searchByParam(ArticleParam article) {
 		return this.articleMapper.searchByParam(article);
+	}
+
+	@Override
+	public void deleteArticleById(Long id) {
+		Article record = new Article();
+		record.setId(id);
+		record.setDelFlag(BlogConstants.DELETE_FLAG_1);
+		this.articleMapper.updateByPrimaryKeySelective(record );
+		
+	}
+
+	@Override
+	public void updateArtice(Article article) {
+		if(null == article.getId()){
+			throw new MessageException(102);
+		}
+		this.articleMapper.updateByPrimaryKeySelective(article);
+		
 	}
 
 	

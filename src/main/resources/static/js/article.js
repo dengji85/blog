@@ -13,7 +13,7 @@
 	  var $=layui.jquery;
 	  
 	  $("#wz").addClass("layui-this");
-	  
+	   $("#s_wz").addClass("layui-this");
 	  // 执行一个laypage实例
 	  laypage.render({
 		  limit:7,

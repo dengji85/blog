@@ -1,0 +1,553 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>羊哇博客</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="blog|java |资源共享|宅男福利|个人博客" />
+<meta name="author" content="" />
+<!-- <link rel="shortcut icon" href="/images/Logo_40.png" type="image/x-icon"> -->
+<!--Layui-->
+<link th:href="@{/plug/layui/css/layui.css}" rel="stylesheet" />
+<!--font-awesome-->
+<link th:href="@{/plug/font-awesome/css/font-awesome.min.css}"
+	rel="stylesheet" />
+	
+<link rel="next" href="http://www.zhubobook.com/category/anchor/page/2/">
+
+<link rel="canonical" href="http://www.zhubobook.com/category/anchor/">
+<!-- /all in one seo pack -->
+		<script src="../static/js/push.js"></script><script src="../static/js/hm.js"></script><script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/2.3\/72x72\/","ext":".png","svgUrl":false,"svgExt":".svg","source":{"concatemoji":"http:\/\/www.zhubobook.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=4.9.1"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55358,56794,8205,9794,65039],[55358,56794,8203,9794,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="../static/js/wp-emoji-release.min.js" type="text/javascript" defer=""></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+
+
+.header {
+				height: 70px;
+				background-color: #fff;
+			}
+			
+			.header .layui-nav {
+				position: absolute;
+				right: 0;
+				top: 0;
+				padding: 0;
+				background: none;
+			}
+			
+			.header .layui-nav .layui-nav-item {
+				margin: 0 20px;
+			}
+			
+			.header .layui-nav li a {
+				color: #000000;
+				font-weight: bold;
+			}
+			
+			.header .layui-nav .layui-nav-bar {
+				background-color: #f84b9c;
+			}
+			
+			.header .layui-nav .layui-this:after {
+				background-color: #f84b9c;
+				color: #000000;
+			}
+			
+			.header .layui-nav li a:hover {
+				color: #000000;
+			}
+			
+			.logo {
+				position: absolute;
+				left: 0;
+				top: 16px;
+			}
+			
+			.logo img {
+				width: 134px;
+				height: auto;
+			}
+</style>
+<link rel="stylesheet" id="zhubo-style-css" th:href="@{/css/av/style.css}" href="../static/css/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="contact-form-7-css" th:href="@{/css/av/styles.css}" href="../static/css/styles.css" type="text/css" media="all">
+<script type="text/javascript" th:href="@{/plug/jquery.js}" src="../static/plug/jquery.js"></script>
+<script type="text/javascript" src="../static/plug/jquery-migrate.min.js"></script>
+<link rel="https://api.w.org/" href="http://www.zhubobook.com/wp-json/">
+<meta name="generator" content="WordPress 4.9.1">
+<script type="text/javascript">
+	window._se_plugin_version = '8.1.9';
+</script>
+<script type="text/javascript" src="../static/js/si_captcha.js"></script>
+<!-- begin SI CAPTCHA Anti-Spam - login/register form style -->
+<style type="text/css">
+.si_captcha_small { width:175px; height:45px; padding-top:10px; padding-bottom:10px; }
+.si_captcha_large { width:250px; height:60px; padding-top:10px; padding-bottom:10px; }
+img#si_image_com { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_reg { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_log { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_side_login { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_checkout { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_jetpack { border-style:none; margin:0; padding-right:5px; float:left; }
+img#si_image_bbpress_topic { border-style:none; margin:0; padding-right:5px; float:left; }
+.si_captcha_refresh { border-style:none; margin:0; vertical-align:bottom; }
+div#si_captcha_input { display:block; padding-top:15px; padding-bottom:5px; }
+label#si_captcha_code_label { margin:0; }
+input#si_captcha_code_input { width:65px; }
+p#si_captcha_code_p { clear: left; padding-top:10px; }
+.si-captcha-jetpack-error { color:#DC3232; }
+</style>
+<!-- end SI CAPTCHA Anti-Spam - login/register form style -->
+<link rel="icon" href="http://www.zhubobook.com/wp-content/uploads/2017/06/cropped-2017-06-18-1244082388-1-32x32.jpg" sizes="32x32">
+<link rel="icon" href="http://www.zhubobook.com/wp-content/uploads/2017/06/cropped-2017-06-18-1244082388-1-192x192.jpg" sizes="192x192">
+<link rel="apple-touch-icon-precomposed" href="http://www.zhubobook.com/wp-content/uploads/2017/06/cropped-2017-06-18-1244082388-1-180x180.jpg">
+<meta name="msapplication-TileImage" content="http://www.zhubobook.com/wp-content/uploads/2017/06/cropped-2017-06-18-1244082388-1-270x270.jpg">
+	<link id="layuicss-laydate" rel="stylesheet" href="../static/plug/layui/css/modules/laydate/laydate.css" media="all"><link id="layuicss-layer" rel="stylesheet" href="../static/plug/layui/css/modules/layer/default/layer.css" media="all"></head>
+	<body>
+		
+		<div class="layui-header header ">
+			<div class="layui-main">
+
+				<a class="logo">
+					<img src="../static/img/LOGO.png" />
+				</a>
+
+				<ul class="layui-nav" lay-filter="">
+					<li class="layui-nav-item">
+						<a href="">最新活动</a>
+					</li>
+					<li class="layui-nav-item layui-this">
+						<a href="">产品</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">大数据</a>
+					</li>
+					<li class="layui-nav-item">
+						<a href="javascript:;">解决方案</a>
+						<dl class="layui-nav-child">
+							<!-- 二级菜单 -->
+							<dd>
+								<a href="">移动模块</a>
+							</dd>
+							<dd>
+								<a href="">后台模版</a>
+							</dd>
+							<dd>
+								<a href="">电商平台</a>
+							</dd>
+						</dl>
+					</li>
+					<li class="layui-nav-item">
+						<a href="">社区</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+		
+		
+		<!--<div class="page-head">
+			<div class="layui-container">
+				<div class="logo"><a href="http://www.zhubobook.com/"><img src="./主播 _ 主播百科_files/LOGO.png"></a></div>
+				<div class="menu-%e5%af%bc%e8%88%aa-container"><ul id="top_nav" class="layui-nav pc-nav"><li id="menu-item-1835" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-1835 layui-nav-item"><a href="http://www.zhubobook.com/">卷首</a></li>
+<li id="menu-item-1836" class="menu-item menu-item-type-taxonomy menu-item-object-category current-menu-item menu-item-1836 layui-nav-item layui-this"><a href="http://www.zhubobook.com/category/anchor/">主播</a></li>
+<li id="menu-item-4089" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-4089 layui-nav-item"><a href="http://www.zhubobook.com/category/guild/">公会</a></li>
+<li id="menu-item-1837" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1837 layui-nav-item"><a href="http://www.zhubobook.com/category/photo/">美图</a></li>
+<li id="menu-item-1838" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-1838 layui-nav-item"><a href="http://www.zhubobook.com/tools/">导航</a></li>
+<li id="menu-item-1839" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-1839 layui-nav-item"><a href="http://www.zhubobook.com/category/news/">新闻</a></li>
+<li id="menu-item-1840" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1840 layui-nav-item"><a href="http://www.zhubobook.com/shequ">社区</a></li>
+<span class="layui-nav-bar" style="left: 34.2344px; top: 65px; width: 0px; opacity: 0;"></span></ul></div>				<ul class="layui-nav mo-nav" lay-filter="">
+					<li class="layui-nav-item">
+						<a href="javascript:;">导航<span class="layui-nav-more"></span></a>
+					    <dl class="layui-nav-child"> <!-- 二级菜单 -->
+						<!--	<dd><a href="http://www.zhubobook.com/">卷首</a></dd>
+							<dd><a href="http://www.zhubobook.com/category/anchor">主播</a></dd>
+							<dd><a href="http://www.zhubobook.com/category/guild">公会</a></dd>
+							<dd><a href="http://www.zhubobook.com/category/photo">美图</a></dd>
+							<dd><a href="http://www.zhubobook.com/tools">导航</a></dd>
+							<dd><a href="http://www.zhubobook.com/category/news">新闻</a></dd>
+							<dd><a href="http://www.zhubobook.com/shequ">社区</a></dd>
+					    </dl>
+					</li>
+				<span class="layui-nav-bar"></span></ul>
+			</div>
+		</div>-->
+			
+		<!-- /.page-head -->
+		<div class="page-search page-search-alone">
+			<div class="layui-container">
+				<div class="moudle-card">
+					<form class="layui-form" role="search" action="http://www.zhubobook.com/" method="get">
+	<div class="layui-form-item">
+		<div class="layui-inline">
+			<input type="text" name="s" id="search" placeholder="请输入主播名字" autocomplete="off" class="layui-input">
+			<input type="hidden" id="search_hide" value="">
+		</div>
+		<div class="layui-inline">
+			<select name="platform" lay-verify="" lay-search="" id="platform">
+				<option value="" selected="">直播平台</option>
+				<option value="11">斗鱼直播</option>
+				<option value="61">虎牙直播</option>
+				<option value="15">熊猫直播</option>
+				<option value="51">YY直播</option>
+				<option value="65">龙珠直播</option>
+				<option value="59">全民直播</option>
+				<option value="115">一直播</option>
+				<option value="12">战旗直播</option>
+				<option value="165">映客直播</option>
+				<option value="145">企鹅电竞</option>
+				<option value="190">Bilibili</option>
+				<option value="205">触手直播</option>
+			</select><div class="layui-form-select"><div class="layui-select-title"><input type="text" placeholder="直播平台" value="" class="layui-input"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit"><dd lay-value="" class="layui-select-tips">直播平台</dd><dd lay-value="11" class="">斗鱼直播</dd><dd lay-value="61" class="">虎牙直播</dd><dd lay-value="15" class="">熊猫直播</dd><dd lay-value="51" class="">YY直播</dd><dd lay-value="65" class="">龙珠直播</dd><dd lay-value="59" class="">全民直播</dd><dd lay-value="115" class="">一直播</dd><dd lay-value="12" class="">战旗直播</dd><dd lay-value="165" class="">映客直播</dd><dd lay-value="145" class="">企鹅电竞</dd><dd lay-value="190" class="">Bilibili</dd><dd lay-value="205" class="">触手直播</dd></dl></div>
+		</div>
+		<div class="layui-inline">
+			<select name="feature" lay-verify="" lay-search="" id="feature">
+				<option value="" selected="">主播特性</option>
+					<optgroup label="游戏">
+						<option value="167">游戏主播</option>
+						<option value="38">王者荣耀</option>
+						<option value="6">英雄联盟</option>
+						<option value="16">职业玩家</option>
+						<option value="57">游戏解说</option>
+					</optgroup>
+					<optgroup label="娱乐/秀场">
+						<option value="170">娱乐主播</option>
+						<option value="20">唱歌</option>
+						<option value="79">跳舞</option>
+					</optgroup>
+					<optgroup label="其他">
+						<option value="171">户外主播</option>
+						<option value="133">美食主播</option>
+					</optgroup>
+					
+			</select><div class="layui-form-select"><div class="layui-select-title"><input type="text" placeholder="主播特性" value="" class="layui-input"><i class="layui-edge"></i></div><dl class="layui-anim layui-anim-upbit layui-select-group"><dd lay-value="" class="layui-select-tips">主播特性</dd><dt>游戏</dt><dd lay-value="167" class="">游戏主播</dd><dd lay-value="38" class="">王者荣耀</dd><dd lay-value="6" class="">英雄联盟</dd><dd lay-value="16" class="">职业玩家</dd><dd lay-value="57" class="">游戏解说</dd><dt>娱乐/秀场</dt><dd lay-value="170" class="">娱乐主播</dd><dd lay-value="20" class="">唱歌</dd><dd lay-value="79" class="">跳舞</dd><dt>其他</dt><dd lay-value="171" class="">户外主播</dd><dd lay-value="133" class="">美食主播</dd></dl></div>
+		</div>
+		<div class="layui-inline">
+			<button class="layui-btn zb-btn" lay-submit="" lay-filter="search_anchor">搜索主播</button>
+		</div>
+	</div>
+</form>				</div>
+			</div>
+		</div><!-- /.page-search -->
+		
+		<div class="page-title" unselectable="on" onselectstart="return false;">
+			<div class="layui-container">
+				<div class="title">
+					<h2>
+						收录主播
+						<span class="line"></span>
+					</h2>
+				</div>
+				<span class="title-eng">NEW ANCHOR</span>
+			</div>
+		</div>
+		
+		<div class="page-anchor">
+			<div class="layui-container">
+				<div class="layui-row layui-col-space22">
+					<div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">熊猫直播</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e7%94%9c%e8%8f%9c%e7%8e%89baby/"><img src="./主播 _ 主播百科_files/2017-11-29-1443484230.jpg" alt="甜菜玉baby"></a></div>
+		<div class="anchor-con">
+			<div class="name">甜菜玉baby<span class="line"></span></div>
+			<div class="info">天使的面孔魔鬼的身材。</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e7%94%9c%e8%8f%9c%e7%8e%89baby/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">熊猫直播</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/vivi%e4%b8%b6%e8%96%87/"><img src="./主播 _ 主播百科_files/2017-11-29-1424548549.jpg" alt="Vivi丶薇"></a></div>
+		<div class="anchor-con">
+			<div class="name">Vivi丶薇<span class="line"></span></div>
+			<div class="info">逗比萌妹子，LOL女神。</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/vivi%e4%b8%b6%e8%96%87/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">斗鱼直播</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e7%81%b5%e9%ad%82%e6%ad%8c%e8%80%85%e9%80%b8%e7%a5%9e/"><img src="./主播 _ 主播百科_files/2017-11-29-1414542826.jpg" alt="灵魂歌者逸神"></a></div>
+		<div class="anchor-con">
+			<div class="name">灵魂歌者逸神<span class="line"></span></div>
+			<div class="info">国服第一李白</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e7%81%b5%e9%ad%82%e6%ad%8c%e8%80%85%e9%80%b8%e7%a5%9e/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">斗鱼直播</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e9%aa%a8%e5%a4%b4cheryl/"><img src="./主播 _ 主播百科_files/2017-11-25-0255044065.jpg" alt="骨头Cheryl"></a></div>
+		<div class="anchor-con">
+			<div class="name">骨头Cheryl<span class="line"></span></div>
+			<div class="info">超美的二次元主播、coser</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e9%aa%a8%e5%a4%b4cheryl/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">斗鱼直播</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e4%b8%83%e5%a5%88nai/"><img src="./主播 _ 主播百科_files/2017-11-23-1217373215.jpg" alt="七奈NAI"></a></div>
+		<div class="anchor-con">
+			<div class="name">七奈NAI<span class="line"></span></div>
+			<div class="info">专业coser小姐姐</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e4%b8%83%e5%a5%88nai/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">斗鱼直播</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/saki%e5%b0%8f%e5%a4%ad%e5%a4%ad/"><img src="./主播 _ 主播百科_files/2017-11-23-1201098960.jpg" alt="Saki小夭夭"></a></div>
+		<div class="anchor-con">
+			<div class="name">Saki小夭夭<span class="line"></span></div>
+			<div class="info">WCS世界峰会宅舞中国总冠军</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/saki%e5%b0%8f%e5%a4%ad%e5%a4%ad/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">企鹅电竞</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e4%b8%80%e5%8f%aa%e5%ba%b7%e5%b8%88%e5%82%85/"><img src="./主播 _ 主播百科_files/2017-11-23-1147599063.jpg" alt="一只康师傅"></a></div>
+		<div class="anchor-con">
+			<div class="name">一只康师傅<span class="line"></span></div>
+			<div class="info">健康绿色游戏解说康师傅</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e4%b8%80%e5%8f%aa%e5%ba%b7%e5%b8%88%e5%82%85/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">六间房</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e6%88%91%e6%98%af%e8%8a%b1%e7%94%9f%e9%85%b1/"><img src="./主播 _ 主播百科_files/2017-11-22-1248192218.jpg" alt="我是花生酱"></a></div>
+		<div class="anchor-con">
+			<div class="name">我是花生酱<span class="line"></span></div>
+			<div class="info">长相清秀，性格讨喜的东北女孩</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e6%88%91%e6%98%af%e8%8a%b1%e7%94%9f%e9%85%b1/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">六间房</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/mu%e5%a9%b7%e5%84%bfs/"><img src="./主播 _ 主播百科_files/2017-11-22-1241312661.jpg" alt="MU婷儿s"></a></div>
+		<div class="anchor-con">
+			<div class="name">MU婷儿s<span class="line"></span></div>
+			<div class="info">舞区超人气主播</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/mu%e5%a9%b7%e5%84%bfs/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">六间房</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e6%b0%b4%e8%9c%9c%e6%a1%83%e8%82%89%e5%98%9f%e5%98%9f/"><img src="./主播 _ 主播百科_files/2017-11-22-1233553981.jpg" alt="水蜜桃肉嘟嘟"></a></div>
+		<div class="anchor-con">
+			<div class="name">水蜜桃肉嘟嘟<span class="line"></span></div>
+			<div class="info">来自东北的小仙女</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e6%b0%b4%e8%9c%9c%e6%a1%83%e8%82%89%e5%98%9f%e5%98%9f/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">斗鱼直播</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e8%95%be%e6%ac%a7%e5%a8%9c6969/"><img src="./主播 _ 主播百科_files/2017-11-22-1204386536.jpg" alt="蕾欧娜6969"></a></div>
+		<div class="anchor-con">
+			<div class="name">蕾欧娜6969<span class="line"></span></div>
+			<div class="info">一位非常乐观的美女主播</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e8%95%be%e6%ac%a7%e5%a8%9c6969/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">熊猫直播</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e6%b1%a1%e5%ae%89%e7%bb%be/"><img src="./主播 _ 主播百科_files/2017-11-21-1312243433.jpg" alt="污安绾"></a></div>
+		<div class="anchor-con">
+			<div class="name">污安绾<span class="line"></span></div>
+			<div class="info">二次元腹黑美少女</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e6%b1%a1%e5%ae%89%e7%bb%be/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">斗鱼直播</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e7%b1%b3%e7%ba%bf%e7%ba%bfsama/"><img src="./主播 _ 主播百科_files/2017-11-21-121746819.jpg" alt="米线线sama"></a></div>
+		<div class="anchor-con">
+			<div class="name">米线线sama<span class="line"></span></div>
+			<div class="info">超级可爱的二次元主播</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e7%b1%b3%e7%ba%bf%e7%ba%bfsama/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">熊猫直播</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e5%9d%9a%e6%9e%9c%e6%88%98%e6%96%97%e6%9c%ba/"><img src="./主播 _ 主播百科_files/2017-11-20-1324082382.jpg" alt="坚果战斗机"></a></div>
+		<div class="anchor-con">
+			<div class="name">坚果战斗机<span class="line"></span></div>
+			<div class="info">熊猫星颜主播</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e5%9d%9a%e6%9e%9c%e6%88%98%e6%96%97%e6%9c%ba/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">熊猫直播</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e4%be%9d%e9%85%b1/"><img src="./主播 _ 主播百科_files/2017-11-20-1308275406.jpg" alt="依酱"></a></div>
+		<div class="anchor-con">
+			<div class="name">依酱<span class="line"></span></div>
+			<div class="info">二次元美少女</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e4%be%9d%e9%85%b1/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div><div class="layui-col-xs6 layui-col-lg3">
+	<div class="moudle-card">
+		<div class="anchor-platform">全民直播</div>
+		<div class="anchor-img"><a href="http://www.zhubobook.com/%e5%82%b2%e5%a8%87%e8%bf%bd%e7%8c%8e%e5%96%b5/"><img src="./主播 _ 主播百科_files/2017-11-19-1418234458.jpg" alt="傲娇追猎喵"></a></div>
+		<div class="anchor-con">
+			<div class="name">傲娇追猎喵<span class="line"></span></div>
+			<div class="info">英雄联盟主播</div>
+		</div>
+		<div class="anchor-link">
+			<a href="http://www.zhubobook.com/%e5%82%b2%e5%a8%87%e8%bf%bd%e7%8c%8e%e5%96%b5/" class="layui-btn layui-btn-small zb-btn">主播详情</a>
+		</div>
+	</div>
+</div>				</div>
+			</div>
+		</div><!-- /.page-anchor -->
+		
+		<div class="page-laypage">
+			
+	<nav class="navigation pagination" role="navigation">
+		<h2 class="screen-reader-text">文章导航</h2>
+		<div class="nav-links"><span aria-current="page" class="page-numbers current">1</span>
+<a class="page-numbers" href="http://www.zhubobook.com/category/anchor/page/2/">2</a>
+<span class="page-numbers dots">…</span>
+<a class="page-numbers" href="http://www.zhubobook.com/category/anchor/page/23/">23</a>
+<a class="next page-numbers" href="http://www.zhubobook.com/category/anchor/page/2/">下一页</a></div>
+	</nav>		</div><!-- /.page-laypage -->
+		
+				<div class="page-foot">
+			<div class="layui-container">
+				<div class="layui-row">
+					<div class="layui-col-xs12 layui-col-lg6">
+						<div class="foot-logo">
+							<img src="./主播 _ 主播百科_files/LOGO_big.png">
+							<p>本站所有资料均来源于主播提供以及互联网搜集</p>
+							<p>本站对此不承担任何法律责任</p>
+						</div>
+					</div>
+					<div class="layui-col-xs4 layui-col-lg2">
+						<div class="foot-link">
+							<h5 class="title">友情</h5>
+							<div class="menu-%e5%8f%8b%e6%83%85%e9%93%be%e6%8e%a5-container"><ul id="menu-%e5%8f%8b%e6%83%85%e9%93%be%e6%8e%a5" class="link"><li id="menu-item-882" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-882"><a target="_blank" href="http://bobatop.com/">播霸榜</a></li>
+<li id="menu-item-264" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-264"><a target="_blank" href="http://www.iresearch.tv/">直播观察</a></li>
+</ul></div>						</div>
+					</div>
+					<div class="layui-col-xs4 layui-col-lg2">
+						<div class="foot-link">
+							<h5 class="title">关于</h5>
+							<div class="menu-%e5%ba%95%e9%83%a8%e5%85%b3%e4%ba%8e-container"><ul id="menu-%e5%ba%95%e9%83%a8%e5%85%b3%e4%ba%8e" class="link"><li id="menu-item-90" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-90"><a href="http://www.zhubobook.com/about/">网站简介</a></li>
+<li id="menu-item-117" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-117"><a href="http://www.zhubobook.com/add-anchor/">添加主播</a></li>
+<li id="menu-item-4120" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4120"><a href="http://www.zhubobook.com/add-guild/">添加公会</a></li>
+</ul></div>						</div>
+					</div>
+					<div class="layui-col-xs4 layui-col-lg2">
+						<div class="foot-link">
+							<h5 class="title">联络</h5>
+							<ul class="link">
+								<li>QQ：2163756375</li>
+								<li>E-mail：zhubobook@qq.com</li>
+								<li>QQ群：321561252</li>
+								<li>备案号：辽ICP备10006020号-3</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div><!-- /.page-foot -->
+		
+		<script type="text/javascript">
+/* <![CDATA[ */
+var wpcf7 = {"apiSettings":{"root":"http:\/\/www.zhubobook.com\/wp-json\/contact-form-7\/v1","namespace":"contact-form-7\/v1"},"recaptcha":{"messages":{"empty":"\u8bf7\u9a8c\u8bc1\u60a8\u4e0d\u662f\u4e00\u4e2a\u673a\u5668\u4eba\u3002"}},"cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="../static/js/scripts.js"></script>
+<script type="text/javascript" src="../static/js/wp-embed.min.js"></script>
+		
+		<!--[if lt IE 9]>
+		  <script src="https://cdn.staticfile.org/html5shiv/r29/html5.min.js"></script>
+		  <script src="https://cdn.staticfile.org/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript" src="../static/plug/jquery-3.1.1.min.js"></script>
+		<script type="text/javascript" src="../static/plug/layui/layui.js"></script>
+		<script type="text/javascript" src="../static/js/main.js"></script>
+		
+		<script>
+		//百度统计
+		var _hmt = _hmt || [];
+		(function() {
+		  var hm = document.createElement("script");
+		  hm.src = "https://hm.baidu.com/hm.js?34725a06b5ab3fe8ab65dc7181a3eafb";
+		  var s = document.getElementsByTagName("script")[0]; 
+		  s.parentNode.insertBefore(hm, s);
+		})();
+		//百度自动提交链接
+		(function(){
+		    var bp = document.createElement('script');
+		    var curProtocol = window.location.protocol.split(':')[0];
+		    if (curProtocol === 'https') {
+		        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+		    }
+		    else {
+		        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+		    }
+		    var s = document.getElementsByTagName("script")[0];
+		    s.parentNode.insertBefore(bp, s);
+		})();
+		</script>
+	
+
+
+<!-- Dynamic page generated in 0.614 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2017-12-01 15:18:24 -->
+
+<!-- Compression = gzip --><ul class="layui-fixbar" style="right: 10px; bottom: 100px;"><li class="layui-icon layui-fixbar-top" lay-type="top" style="background-color: rgb(57, 57, 57); display: none;"></li></ul></body></html>

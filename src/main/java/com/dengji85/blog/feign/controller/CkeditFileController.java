@@ -8,7 +8,7 @@ import com.dengji85.blog.feign.CkeditFileUploadClient;
 
 @Controller
 public class CkeditFileController {
-	@Autowired
+	//@Autowired
 	CkeditFileUploadClient ckeditFileUploadClient;
 	
 	@RequestMapping("/ckedit")

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
-@FeignClient("eureka-file")
+//@FeignClient("eureka-file")
 public interface CkeditFileUploadClient {
 	@PostMapping("/ckedit")
 	public void ckedit();

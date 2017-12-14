@@ -20,13 +20,14 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.dengji85.blog.model.File;
 import com.dengji85.blog.service.FileGridFsService;
 import com.mongodb.gridfs.GridFSDBFile;
-
+@RequestMapping("/ckedit")
 @Controller
 @CrossOrigin(origins = "*", maxAge = 3600)
 public class CkeditFileUploadController {
@@ -46,7 +47,7 @@ public class CkeditFileUploadController {
 
 	}
 
-	@PostMapping("/ckedit")
+	@PostMapping("/uploadImage")
 	public void uplod(HttpServletRequest req, HttpServletResponse res,
 			@RequestParam("upload") MultipartFile upload) {
 
@@ -69,7 +70,7 @@ public class CkeditFileUploadController {
 			StringBuffer sb = new StringBuffer();
 			sb.append("<script type=\"text/javascript\">");
 			sb.append("window.parent.CKEDITOR.tools.callFunction("
-					+ CKEditorFuncNum + ",'" +"http://" +serverAddress+":"+serverPort+"/image/"
+					+ CKEditorFuncNum + ",'" +"http://" +serverAddress+":"+serverPort+"/ckedit/showImage/"
 					+ id + "','')");
 			sb.append("</script>");
 			System.out.println(sb.toString());
@@ -82,7 +83,7 @@ public class CkeditFileUploadController {
 
 	}
 
-	@GetMapping("/image/{id}")
+	@GetMapping("/showImage/{id}")
 	public void getImage(HttpServletRequest request,
 			HttpServletResponse response, @PathVariable String id) {
 		if (id == null) {

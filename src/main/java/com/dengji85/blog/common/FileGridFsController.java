@@ -56,12 +56,12 @@ public class FileGridFsController {
 
 	}
 
-	/**
+/*	*//**
 	 * 上传接口
 	 * 
 	 * @param file
 	 * @return
-	 */
+	 *//*
 	@PostMapping("/upload")
 	@ResponseBody
 	public ResponseEntity<String> handleFileUpload(
@@ -87,7 +87,40 @@ public class FileGridFsController {
 		}
 
 	}
+*/
+	/**
+	 * 上传接口
+	 * 
+	 * @param file
+	 * @return
+	 */
+	@PostMapping("/upload")
+	@ResponseBody
+	public MessageResponse<String> handleFileUpload(
+			@RequestParam("file") MultipartFile file) {
+		MessageResponse<String> ret = new MessageResponse<>();
+		String id = null;
+		String path = "";
+		try {
+			File f = new File(file.getOriginalFilename(),
+					file.getContentType(), file.getSize(), file.getBytes());
+			f.setMd5(MD5Util.getMD5(file.getInputStream()));
+			id = gridFsService.save(f);
+			if ("image".contains(file.getContentType())) {
+				path = "//" + serverAddress + ":" + serverPort + "/view/" + id;
+			} else {
+				path = id;
+			}
+			ret.setData(path);
 
+		} catch (IOException | NoSuchAlgorithmException ex) {
+		
+			ret.setCode(999);
+		}
+		return ret;
+	}
+	
+	
 	/**
 	 * 获取文件片信息
 	 * 

@@ -36,6 +36,10 @@ public class ArticleResultMap extends PagerParams {
 	
 	private Integer orderNo;
 
+	private String imgId;
+	
+	private Integer recommend;
+	
 	public Long getId() {
 		return id;
 	}
@@ -360,5 +364,21 @@ public class ArticleResultMap extends PagerParams {
 
 	public void setOrderNo(Integer orderNo) {
 		this.orderNo = orderNo;
+	}
+
+	public String getImgId() {
+		return imgId;
+	}
+
+	public void setImgId(String imgId) {
+		this.imgId = imgId;
+	}
+
+	public Integer getRecommend() {
+		return recommend;
+	}
+
+	public void setRecommend(Integer recommend) {
+		this.recommend = recommend;
 	}
 }

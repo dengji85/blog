@@ -27,6 +27,18 @@ public class DictServiceImpl implements DictService {
 			throw new MessageException(101);
 		}
 		criteria.andClassCodeEqualTo(param.getClassCode());
+		criteria.andDelFlagEqualTo(BlogConstants.DELETE_FLAG_0);
 		return dictMapper.selectByExample(example);
+	}
+
+	@Override
+	public Dict getByDictCode(DictParam param) {
+
+		DictExample example = new DictExample();
+		Criteria criteria = example.createCriteria();
+		criteria.andDictCodeEqualTo(param.getDictCode());
+		criteria.andDelFlagEqualTo(BlogConstants.DELETE_FLAG_0);
+		criteria.andClassCodeEqualTo(param.getClassCode());
+		return this.dictMapper.selectByExample(example).get(0);
 	}
 }

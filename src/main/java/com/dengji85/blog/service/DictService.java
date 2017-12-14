@@ -8,5 +8,7 @@ import com.dengji85.blog.param.DictParam;
 public interface DictService {
 	
 	public List<Dict> getByClassCode(DictParam param);
+	
+	public Dict getByDictCode(DictParam param);
 
 }

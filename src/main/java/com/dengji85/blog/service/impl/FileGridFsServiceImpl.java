@@ -30,6 +30,6 @@ public class FileGridFsServiceImpl implements FileGridFsService {
 		
 		GridFSDBFile result = fsTemplate.findOne(query );
 		return result;
-
+		
 	}
 }

@@ -71,12 +71,12 @@
 							},
 							{
 								field: 'title',
-								title: '题目',
+								title: '标题',
 							}, {
 								field: 'description',
 								title: '描述',
 							}, {
-								field: 'addTime',
+								field: 'addTimeStr',
 								title: '添加时间',
 							}, {
 								field: 'keyWords',
@@ -102,12 +102,13 @@
 						//$('iframe',window.parent.document).attr('src',basePath + "/article/toAdd");
 						//location.href = basePath + "/article/toAdd";
 
-						layer.open({
+						var index = layer.open({
 							area: ['950px', '400px'],
 							type: 2,
-							maxmin: true,
+							
 							content: [basePath + "/article/toAdd", 'yes'] //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
 						});
+						layer.full(index);
 					},
 					del: function() {
 
@@ -162,12 +163,13 @@
 						});
 					} else if(obj.event === 'edit') {
 						//layer.alert('编辑行：<br/>' + JSON.stringify(data))
-						layer.open({
+						var index = layer.open({
 							area: ['950px', '400px'],
 							type: 2,
-							maxmin: true,
+							
 							content: [basePath + "/article/toEdit?id=" + data.id, 'yes'] //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
 						});
+						layer.full(index);
 					}
 				});
 

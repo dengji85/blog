@@ -1,12 +1,12 @@
 /*
 
-@Name£º²»Âä¸óÕûÕ¾Ä£°åÔ´Âë 
-@Author£ºAbsolutely 
-@Site£ºhttp://www.lyblogs.cn
+@Nameï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ¾Ä£ï¿½ï¿½Ô´ï¿½ï¿½ 
+@Authorï¿½ï¿½Absolutely 
+@Siteï¿½ï¿½http://www.lyblogs.cn
 
 */
 
-/*È«¾ÖÑùÊ½*/
+/*È«ï¿½ï¿½ï¿½ï¿½Ê½*/
 body {
     background: #eee;
     color: #444;
@@ -68,7 +68,7 @@ body {
         float: right;
     }
 
-/* Ð¡ÆÁÄ»£¨Æ½°å£¬´óÓÚµÈÓÚ 768px£© */
+/* Ð¡ï¿½ï¿½Ä»ï¿½ï¿½Æ½ï¿½å£¬ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ 768pxï¿½ï¿½ */
 @media (min-width: 768px) {
     .blog-container {
         width: 738px;
@@ -97,7 +97,7 @@ body {
         }
 }
 
-/* ÖÐµÈÆÁÄ»£¨×ÀÃæÏÔÊ¾Æ÷£¬´óÓÚµÈÓÚ 992px£© */
+/* ï¿½Ðµï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ 992pxï¿½ï¿½ */
 @media (min-width: 992px) {
     .blog-container {
         width: 962px;
@@ -117,15 +117,15 @@ body {
         }
 }
 
-/* ´óÆÁÄ»£¨´ó×ÀÃæÏÔÊ¾Æ÷£¬´óÓÚµÈÓÚ 1200px£© */
+/* ï¿½ï¿½ï¿½ï¿½Ä»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ 1200pxï¿½ï¿½ */
 @media (min-width: 1200px) {
     .blog-container {
         width: 1170px;
     }
 }
-/*È«¾ÖÑùÊ½END*/
+/*È«ï¿½ï¿½ï¿½ï¿½Ê½END*/
 
-/*Ãæ°üÐ¼µ¼º½*/
+/*ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½*/
 .sitemap {
     background: #fff;
     margin-top: 79px;
@@ -157,9 +157,9 @@ body {
             font-size: 14px;
         }
 }
-/*Ãæ°üÐ¼µ¼º½END*/
+/*ï¿½ï¿½ï¿½Ð¼ï¿½ï¿½ï¿½ï¿½END*/
 
-/*¶¥²¿µ¼º½*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 .blog-nav {
     width: 100%;
     height: 64px;
@@ -267,9 +267,9 @@ body {
         display: none !important;
     }
 }
-/* ¶¥²¿µ¼º½End */
+/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½End */
 
-/*ÍøÕ¾µ×²¿*/
+/*ï¿½ï¿½Õ¾ï¿½×²ï¿½*/
 .blog-footer {
     text-align: center;
     border-top: 1px solid #009688;
@@ -295,9 +295,9 @@ body {
         .blog-footer > p span {
             padding-left: 7px;
         }
-/*ÍøÕ¾µ×²¿END*/
+/*ï¿½ï¿½Õ¾ï¿½×²ï¿½END*/
 
-/*×ÓÀ¸Ä¿µ¼º½*/
+/*ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½*/
 .child-nav {
     margin: 15px 0;
     text-align: center;
@@ -319,9 +319,9 @@ body {
     background: #5FB878;
     color: #fff;
 }
-/*×ÓÀ¸Ä¿µ¼º½END*/
+/*ï¿½ï¿½ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½END*/
 
-/*²à±ßµ¼º½*/
+/*ï¿½ï¿½ßµï¿½ï¿½ï¿½*/
 .blog-nav-left {
     top: 65px;
     border-radius: 0;
@@ -348,9 +348,9 @@ body {
         display: none !important;
     }
 }
-/*²à±ßµ¼º½END*/
+/*ï¿½ï¿½ßµï¿½ï¿½ï¿½END*/
 
-/*²à±ßµ¼º½ÕÚÕÖ*/
+/*ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 .blog-mask {
     position: fixed;
     left: 0;
@@ -380,9 +380,9 @@ body {
         display: none;
     }
 }
-/*²à±ßµ¼º½ÕÚÕÖEND*/
+/*ï¿½ï¿½ßµï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½END*/
 
-/*°Ù¶È·ÖÏí*/
+/*ï¿½Ù¶È·ï¿½ï¿½ï¿½*/
 .blog-share {
     box-shadow: 0 0 8px #fff;
     position: fixed;
@@ -438,9 +438,9 @@ body {
     -webkit-animation: shareOut 0.5s;
     animation: shareOut 0.5s;
 }
-/*°Ù¶È·ÖÏíEND*/
+/*ï¿½Ù¶È·ï¿½ï¿½ï¿½END*/
 
-/*ÎÄÕÂÁÐ±í£¨ÍøÕ¾Ê×Ò³ºÍÎÄÕÂ×¨À¸¹²ÓÃ£©*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½Ð±?ï¿½ï¿½Õ¾ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½×¨ï¿½ï¿½ï¿½ï¿½ï¿½Ã£ï¿½*/
 .article {
     padding: 15px;
     margin-bottom: 10px;
@@ -466,8 +466,7 @@ body {
     }
 
         .article > .article-left > img {
-            width: 100%;
-            height: auto;
+            height: 100px;
         }
 
     .article > .article-right {
@@ -560,9 +559,9 @@ body {
         font-size: 15px;
     }
 }
-/*ÎÄÕÂÁÐ±íEND*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½END*/
 
-/*ÓÒ²àÄ£¿é£¨ÍøÕ¾Ê×Ò³ºÍÎÄÕÂÁÐ±íÒÔ¼°ÎÄÕÂÏêÏ¸¹²ÓÃ£©*/
+/*ï¿½Ò²ï¿½Ä£ï¿½é£¨ï¿½ï¿½Õ¾ï¿½ï¿½Ò³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð±ï¿½ï¿½Ô¼ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½Ã£ï¿½*/
 .blog-module {
     margin-bottom: 10px;
     padding: 15px;
@@ -586,9 +585,9 @@ body {
     .blog-module-ul li .fa {
         color: #009688;
     }
-/*ÓÒ²àÄ£¿éEND*/
+/*ï¿½Ò²ï¿½Ä£ï¿½ï¿½END*/
 
-/*ÎÄÕÂ·ÖÀàµ¼º½*/
+/*ï¿½ï¿½ï¿½Â·ï¿½ï¿½àµ¼ï¿½ï¿½*/
 .article-category {
     position: fixed;
     top: 64px;
@@ -622,10 +621,10 @@ body {
         width: 98%;
         text-align: center;
         line-height: 19px;
-        word-break: keep-all; /* ²»»»ÐÐ */
-        white-space: nowrap; /* ²»»»ÐÐ */
-        overflow: hidden; /* ÄÚÈÝ³¬³ö¿í¶ÈÊ±Òþ²Ø³¬³ö²¿·ÖµÄÄÚÈÝ */
-        text-overflow: ellipsis; /* µ±¶ÔÏóÄÚÎÄ±¾Òç³öÊ±ÏÔÊ¾Ê¡ÂÔ±ê¼Ç(...) £»ÐèÓëoverflow:hidden;Ò»ÆðÊ¹ÓÃ¡£*/
+        word-break: keep-all; /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+        white-space: nowrap; /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+        overflow: hidden; /* ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ */
+        text-overflow: ellipsis; /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ê¾Ê¡ï¿½Ô±ï¿½ï¿½(...) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½overflow:hidden;Ò»ï¿½ï¿½Ê¹ï¿½Ã¡ï¿½*/
         float: left;
     }
 
@@ -643,10 +642,10 @@ body {
         width: 48%;
         text-align: center;
         line-height: 19px;
-        word-break: keep-all; /* ²»»»ÐÐ */
-        white-space: nowrap; /* ²»»»ÐÐ */
-        overflow: hidden; /* ÄÚÈÝ³¬³ö¿í¶ÈÊ±Òþ²Ø³¬³ö²¿·ÖµÄÄÚÈÝ */
-        text-overflow: ellipsis; /* µ±¶ÔÏóÄÚÎÄ±¾Òç³öÊ±ÏÔÊ¾Ê¡ÂÔ±ê¼Ç(...) £»ÐèÓëoverflow:hidden;Ò»ÆðÊ¹ÓÃ¡£*/
+        word-break: keep-all; /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+        white-space: nowrap; /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
+        overflow: hidden; /* ï¿½ï¿½ï¿½Ý³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½ï¿½Ø³ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Öµï¿½ï¿½ï¿½ï¿½ï¿½ */
+        text-overflow: ellipsis; /* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä±ï¿½ï¿½ï¿½ï¿½Ê±ï¿½ï¿½Ê¾Ê¡ï¿½Ô±ï¿½ï¿½(...) ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½overflow:hidden;Ò»ï¿½ï¿½Ê¹ï¿½Ã¡ï¿½*/
         float: left;
     }
 
@@ -685,7 +684,7 @@ body {
     animation: categoryOut 0.5s;
 }
 
-/*·ÖÀàµ¼º½In¶¯»­*/
+/*ï¿½ï¿½ï¿½àµ¼ï¿½ï¿½Inï¿½ï¿½ï¿½ï¿½*/
 @keyframes categoryIn {
     from {
         right: -140px;
@@ -716,7 +715,7 @@ body {
     }
 }
 
-/*·ÖÀàµ¼º½Out¶¯»­*/
+/*ï¿½ï¿½ï¿½àµ¼ï¿½ï¿½Outï¿½ï¿½ï¿½ï¿½*/
 @keyframes categoryOut {
     from {
         right: 0;
@@ -859,9 +858,9 @@ body {
         display: none;
     }
 }
-/*ÎÄÕÂ·ÖÀàµ¼º½END*/
+/*ï¿½ï¿½ï¿½Â·ï¿½ï¿½àµ¼ï¿½ï¿½END*/
 
-/*ÆÀÂÛÓëÁôÑÔ*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 .blog-comment {
     position: relative;
     margin-bottom: 10px;
@@ -939,7 +938,7 @@ body {
         font-size: 12px;
         line-height: 20px;
     }
-/*ÆÀÂÛÓëÁôÑÔEND*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½END*/
 
 
 
@@ -951,8 +950,8 @@ body {
 
 
 
-/***********************************************¶¯»­¶¨Òå*************************************************/
-/*²à±ßµ¼º½In¶¯»­*/
+/***********************************************ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*************************************************/
+/*ï¿½ï¿½ßµï¿½ï¿½ï¿½Inï¿½ï¿½ï¿½ï¿½*/
 @keyframes leftIn {
     from {
         left: -200px;
@@ -983,7 +982,7 @@ body {
     }
 }
 
-/*²à±ßµ¼º½Out¶¯»­*/
+/*ï¿½ï¿½ßµï¿½ï¿½ï¿½Outï¿½ï¿½ï¿½ï¿½*/
 @keyframes leftOut {
     from {
         left: 0;
@@ -1014,7 +1013,7 @@ body {
     }
 }
 
-/*·ÖÏíIn¶¯»­*/
+/*ï¿½ï¿½ï¿½ï¿½Inï¿½ï¿½ï¿½ï¿½*/
 @keyframes shareIn {
     from {
         right: -200px;
@@ -1045,7 +1044,7 @@ body {
     }
 }
 
-/*·ÖÏíOut¶¯»­*/
+/*ï¿½ï¿½ï¿½ï¿½Outï¿½ï¿½ï¿½ï¿½*/
 @keyframes shareOut {
     from {
         right: 80px;
@@ -1076,7 +1075,7 @@ body {
     }
 }
 
-/*µ­Èë¶¯»­*/
+/*ï¿½ï¿½ï¿½ë¶¯ï¿½ï¿½*/
 @keyframes maskFadeIn {
     from {
         opacity: 0;
@@ -1107,7 +1106,7 @@ body {
     }
 }
 
-/*µ­³ö¶¯»­*/
+/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½*/
 @keyframes maskFadeOut {
     from {
         opacity: 1;

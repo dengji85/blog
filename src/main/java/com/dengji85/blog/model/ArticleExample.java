@@ -297,6 +297,76 @@ public class ArticleExample {
 			return (Criteria) this;
 		}
 
+		public Criteria andImgIdIsNull() {
+			addCriterion("IMG_ID is null");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdIsNotNull() {
+			addCriterion("IMG_ID is not null");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdEqualTo(String value) {
+			addCriterion("IMG_ID =", value, "imgId");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdNotEqualTo(String value) {
+			addCriterion("IMG_ID <>", value, "imgId");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdGreaterThan(String value) {
+			addCriterion("IMG_ID >", value, "imgId");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdGreaterThanOrEqualTo(String value) {
+			addCriterion("IMG_ID >=", value, "imgId");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdLessThan(String value) {
+			addCriterion("IMG_ID <", value, "imgId");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdLessThanOrEqualTo(String value) {
+			addCriterion("IMG_ID <=", value, "imgId");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdLike(String value) {
+			addCriterion("IMG_ID like", value, "imgId");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdNotLike(String value) {
+			addCriterion("IMG_ID not like", value, "imgId");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdIn(List<String> values) {
+			addCriterion("IMG_ID in", values, "imgId");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdNotIn(List<String> values) {
+			addCriterion("IMG_ID not in", values, "imgId");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdBetween(String value1, String value2) {
+			addCriterion("IMG_ID between", value1, value2, "imgId");
+			return (Criteria) this;
+		}
+
+		public Criteria andImgIdNotBetween(String value1, String value2) {
+			addCriterion("IMG_ID not between", value1, value2, "imgId");
+			return (Criteria) this;
+		}
+
 		public Criteria andDescriptionIsNull() {
 			addCriterion("DESCRIPTION is null");
 			return (Criteria) this;
@@ -976,6 +1046,66 @@ public class ArticleExample {
 
 		public Criteria andOrderNoNotBetween(Integer value1, Integer value2) {
 			addCriterion("ORDER_NO not between", value1, value2, "orderNo");
+			return (Criteria) this;
+		}
+
+		public Criteria andRecommendIsNull() {
+			addCriterion("RECOMMEND is null");
+			return (Criteria) this;
+		}
+
+		public Criteria andRecommendIsNotNull() {
+			addCriterion("RECOMMEND is not null");
+			return (Criteria) this;
+		}
+
+		public Criteria andRecommendEqualTo(Integer value) {
+			addCriterion("RECOMMEND =", value, "recommend");
+			return (Criteria) this;
+		}
+
+		public Criteria andRecommendNotEqualTo(Integer value) {
+			addCriterion("RECOMMEND <>", value, "recommend");
+			return (Criteria) this;
+		}
+
+		public Criteria andRecommendGreaterThan(Integer value) {
+			addCriterion("RECOMMEND >", value, "recommend");
+			return (Criteria) this;
+		}
+
+		public Criteria andRecommendGreaterThanOrEqualTo(Integer value) {
+			addCriterion("RECOMMEND >=", value, "recommend");
+			return (Criteria) this;
+		}
+
+		public Criteria andRecommendLessThan(Integer value) {
+			addCriterion("RECOMMEND <", value, "recommend");
+			return (Criteria) this;
+		}
+
+		public Criteria andRecommendLessThanOrEqualTo(Integer value) {
+			addCriterion("RECOMMEND <=", value, "recommend");
+			return (Criteria) this;
+		}
+
+		public Criteria andRecommendIn(List<Integer> values) {
+			addCriterion("RECOMMEND in", values, "recommend");
+			return (Criteria) this;
+		}
+
+		public Criteria andRecommendNotIn(List<Integer> values) {
+			addCriterion("RECOMMEND not in", values, "recommend");
+			return (Criteria) this;
+		}
+
+		public Criteria andRecommendBetween(Integer value1, Integer value2) {
+			addCriterion("RECOMMEND between", value1, value2, "recommend");
+			return (Criteria) this;
+		}
+
+		public Criteria andRecommendNotBetween(Integer value1, Integer value2) {
+			addCriterion("RECOMMEND not between", value1, value2, "recommend");
 			return (Criteria) this;
 		}
 	}

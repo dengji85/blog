@@ -72,11 +72,13 @@
 					<div th:each="art : ${articles.data}">
 						<div class="article shadow">
 							<div class="article-left">
-								<img src="../images/cover/201703181909057125.jpg"
-									alt="基于laypage的layui扩展模块（pagesize.js）！" />
+								<img height="100px" th:attr="src=@{/gf/view/{imgId}(imgId=${art.imgId})}" src="../images/cover/201703181909057125.jpg"
+									th:alt="${art.title}"/>
 							</div>
 							<div class="article-right">
 								<div class="article-title">
+									<i class="icon-stick" th:if="${art.orderNo}>0">顶</i>
+									<i class="icon-stick" th:if="${art.recommend}==1">推荐</i>
 									<a href="detail.html" th:text="${art.title}"
 										th:href="@{/article/{id}(id=${art.id})}">基于laypage的layui扩展模块（pagesize.js）！</a>
 								</div>

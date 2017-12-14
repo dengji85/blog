@@ -60,6 +60,32 @@
 							</div>
 							<div class="layui-form-mid layui-word-aux">以分号隔开</div>
 						</div>
+						<div class="layui-inline">
+							 <label class="layui-form-label">置顶</label>
+								<div class="layui-input-block">
+									<input type="radio" name="orderNo" value="0" checked="true" title="否" th:checked="${article.orderNo==0}"/>
+									<input type="radio" name="orderNo" value="1" title="是" th:checked="${article.orderNo==1}"/>
+								</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">推荐</label>
+								<div class="layui-input-block">
+									<input type="radio" name="recommend" value="0" checked="true" title="否" th:checked="${article.recommend==0}"/>
+									<input type="radio" name="recommend" value="1" title="是" th:checked="${article.recommend==1}"/>
+								</div>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label">封面</label>
+
+						<div class="layui-inline">
+							<img height="120px" class="layui-upload-img" th:src="@{/gf/view/{imgId}(imgId=${article.imgId})}" id="demo1" />
+							<p id="demoText"></p>
+						</div>
+						<div class="layui-inline">
+							<button type="button" class="layui-btn" id="test1">上传图片</button>
+						</div>
+						<input type="hidden" name="imgId" id="imgId" />
 					</div>
 					<div class="layui-form-item">
 						<textarea th:text="${article.content}" id="CKEditor" cols="20" rows="2" class="ckeditor"></textarea>
@@ -81,6 +107,12 @@
 		<script src="/plug/layui/layui.js"></script>
 		<!-- layui规范化用法 -->
 		<script>
+			function checkValue(o) {
+
+				alert(o.id);
+
+			}
+
 			//Demo
 			var strFullPath = window.document.location.href;
 			var strPath = window.document.location.pathname;
@@ -94,14 +126,15 @@
 				//$('iframe',window.parent.document).attr('src',basePath + "/article/toIndex");
 				console.log($('iframe', window.parent.document).attr("src"));
 			}
-			layui.use('form', function() {
+			layui.use(['form', 'upload'], function() {
 				var form = layui.form;
 
 				var strFullPath = window.document.location.href;
 				var strPath = window.document.location.pathname;
 				var pos = strFullPath.indexOf(strPath);
 				var prePath = strFullPath.substring(0, pos);
-				var postPath = strPath.substring(0, strPath.substr(1).indexOf('/') + 1);
+				var postPath = strPath.substring(0,
+					strPath.substr(1).indexOf('/') + 1);
 				var basePath = prePath;
 				basePath = prePath + postPath;
 
@@ -133,7 +166,8 @@
 									icon: 6,
 									time: 1200
 								}, function() {
-									var index = parent.layer.getFrameIndex(window.name);
+									var index = parent.layer
+										.getFrameIndex(window.name);
 									parent.layer.close(index);
 									//location.href = basePath + '/article/toIndex';
 									parent.location.reload();
@@ -148,6 +182,37 @@
 						}
 					});
 					return false;
+				});
+
+				var $ = layui.jquery,
+					upload = layui.upload;
+
+				//普通图片上传
+				var uploadInst = upload.render({
+					elem: '#test1',
+					url: "/gf/upload",
+					before: function(obj) {
+						//预读本地文件示例，不支持ie8
+						obj.preview(function(index, file, result) {
+							$('#demo1').attr('src', result); //图片链接（base64）
+						});
+					},
+					done: function(res) {
+						//如果上传失败
+						if(res.code == 999) {
+							return layer.msg('上传失败');
+						}
+						//上传成功
+						$("#imgId").val(res.data);
+					},
+					error: function() {
+						//演示失败状态，并实现重传
+						var demoText = $('#demoText');
+						demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+						demoText.find('.demo-reload').on('click', function() {
+							uploadInst.upload();
+						});
+					}
 				});
 
 			});

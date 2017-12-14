@@ -55,12 +55,12 @@
 						type="hidden" th:value="${type}" />
 					<div th:if="${articles.count} ==0 " class="shadow"
 						style="text-align: center; font-size: 16px; padding: 40px 15px; background: #fff; margin-bottom: 15px;">
-						未搜索到与【<span th:text="${keyWords}" style="color: #FF5722;">keywords</span>】有关的文章，随便看看吧！
+						未搜索到与【<span th:text="${msg}" style="color: #FF5722;">keywords</span>】有关的文章，随便看看吧！
 					</div>
 					<div th:each="art : ${articles.data}">
 						<div class="article shadow">
 							<div class="article-left">
-								<img src="../images/cover/201703181909057125.jpg"
+								<img height="100px" th:attr="src=@{/gf/view/{imgId}(imgId=${art.imgId})}" src="../images/cover/201703181909057125.jpg"
 									alt="基于laypage的layui扩展模块（pagesize.js）！" />
 							</div>
 							<div class="article-right">

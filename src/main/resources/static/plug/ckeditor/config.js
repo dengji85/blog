@@ -14,7 +14,7 @@ CKEDITOR.editorConfig = function( config ) {
  // 图片上传配置  
     config.filebrowserUploadUrl = 'http://120.78.168.117:8081/ckedit';  
     //config.filebrowserImageUploadUrl = 'http://120.78.168.117:8081/ckedit?type=Image'; 
-   config.filebrowserImageUploadUrl = 'http://127.0.0.1:8011/ckedit?type=Image';
+   config.filebrowserImageUploadUrl = 'http://127.0.0.1:8011/ckedit/uploadImage?type=Image';
    // config.filebrowserImageUploadUrl = 'http://127.0.0.1:8011/ckedit?type=Image';
    // config.filebrowserFlashUploadUrl = '/upload?type=Flash';  
 

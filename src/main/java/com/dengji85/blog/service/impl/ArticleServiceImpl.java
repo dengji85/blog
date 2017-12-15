@@ -9,7 +9,9 @@ import com.dengji85.blog.common.AjaxPagerResult;
 import com.dengji85.blog.common.BlogConstants;
 import com.dengji85.blog.exception.MessageException;
 import com.dengji85.blog.mapper.ArticleMapper;
+import com.dengji85.blog.mapper.VisitMapper;
 import com.dengji85.blog.model.Article;
+import com.dengji85.blog.model.Visit;
 import com.dengji85.blog.param.ArticleParam;
 import com.dengji85.blog.resultmap.ArticleResultMap;
 import com.dengji85.blog.service.ArticleService;
@@ -31,7 +33,7 @@ public class ArticleServiceImpl implements ArticleService {
 
 		result.setData(this.articleMapper.searchPageList(param));
 		Integer count = this.articleMapper.searchPageCount(param);
-		result.setCount(count==null?0:count);
+		result.setCount(count == null ? 0 : count);
 
 		return result;
 	}
@@ -46,17 +48,17 @@ public class ArticleServiceImpl implements ArticleService {
 		Article record = new Article();
 		record.setId(id);
 		record.setDelFlag(BlogConstants.DELETE_FLAG_1);
-		this.articleMapper.updateByPrimaryKeySelective(record );
-		
+		this.articleMapper.updateByPrimaryKeySelective(record);
+
 	}
 
 	@Override
 	public void updateArtice(Article article) {
-		if(null == article.getId()){
+		if (null == article.getId()) {
 			throw new MessageException(102);
 		}
 		this.articleMapper.updateByPrimaryKeySelective(article);
-		
+
 	}
 
 	

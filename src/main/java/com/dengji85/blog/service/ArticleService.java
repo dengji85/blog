@@ -2,6 +2,7 @@ package com.dengji85.blog.service;
 
 import com.dengji85.blog.common.AjaxPagerResult;
 import com.dengji85.blog.model.Article;
+import com.dengji85.blog.model.Visit;
 import com.dengji85.blog.param.ArticleParam;
 import com.dengji85.blog.resultmap.ArticleResultMap;
 
@@ -11,4 +12,6 @@ public interface ArticleService {
 	public AjaxPagerResult<ArticleResultMap> page(ArticleParam param);
 	public void deleteArticleById(Long id);
 	public void updateArtice(Article article);
+	
+	
 }

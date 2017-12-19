@@ -1,0 +1,254 @@
+﻿<!--
+
+ @Name：不落阁后台模板源码
+ @Author：Absolutely
+ @Site：http://www.lyblogs.cn
+
+ -->
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>数据列表页面</title>
+		<!-- layui.css -->
+		<link href="/plug/layui/css/layui.css" rel="stylesheet" />
+
+	</head>
+
+	<body>
+
+		<fieldset class="layui-elem-field">
+			<legend></legend>
+			<div class="layui-field-box">
+				<div class="layui-btn-group demoTable">
+					<button class="layui-btn" data-type="add">
+					  <i class="layui-icon">&#xe608;</i> 添加
+					</button>
+					<button class="layui-btn layui-btn-danger" data-type="del"> 
+					  <i class="layui-icon">&#xe640;</i> 删除
+					</button>
+				</div>
+			</div>
+		</fieldset>
+
+		<table id="demo" class="layui-hide" lay-filter="_table"></table>
+
+		<!-- layui.js -->
+		<script src="/plug/layui/layui.js"></script>
+		<!-- layui规范化用法 -->
+		<script type="text/javascript">
+			layui.use(['table', 'jquery'], function() {
+
+				var table = layui.table;
+				var $ = layui.$;
+				var strFullPath = window.document.location.href;
+				var strPath = window.document.location.pathname;
+				var pos = strFullPath.indexOf(strPath);
+				var prePath = strFullPath.substring(0, pos);
+				var postPath = strPath.substring(0, strPath.substr(1).indexOf('/') + 1);
+				var basePath = prePath;
+				basePath = prePath + postPath;
+
+				console.log(basePath);
+				//第一个实例
+				table.render({
+					elem: '#demo',
+					cellMinWidth: 80,
+					url: '/back/actress/' //数据接口
+						,
+					page: true //开启分页
+						,
+					cols: [
+						[ //表头
+							{
+								type: 'numbers'
+							},
+							{
+								type: 'checkbox'
+							},
+							{
+								field: 'actressName',
+								title: '女优',
+							}, {
+								field: 'birthday',
+								title: '生日',
+							}, {
+								field: 'hipline',
+								title: '臀围',
+								width:70
+							}, {
+								field: 'bust',
+								title: '胸围',
+								width:70
+							}, {
+								field: 'waistline',
+								title: '腰围',
+								width:70
+							}, {
+								field: 'cup',
+								title: '罩杯',
+								width:60
+							},{
+								field: 'height',
+								title: '身高',
+								width:80
+							},{
+								field: 'hobby',
+								title: '爱好',
+							},{
+								field: 'homePlace',
+								title: '出生地',
+							},{
+								field: 'addTime',
+								title: '添加时间',
+							},{
+								field: 'type',
+								title: '类型',
+							},{field:'isMy', title:'我是否收录', width:110, templet: '#isMy', unresize: true}
+							,{
+								field: 'myStar',
+								title: '我的评分',
+							}
+							,{field:'img', title:'主图', width:110, templet: '#img'}
+							
+							, {
+								fixed: 'right',
+								align: 'center',
+								toolbar: '#bar',
+								width:300
+							}
+
+						]
+					]
+				});
+
+
+
+				var active = {
+					add: function() {
+						//$('iframe',window.parent.document).attr('src',basePath + "/article/toAdd");
+						//location.href = basePath + "/article/toAdd";
+
+						var index = layer.open({
+							area: ['950px', '400px'],
+							type: 2,
+							
+							content: [basePath + "/actress/toAdd", 'yes'] //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+						});
+						layer.full(index);
+					},
+					del: function() {
+
+					},
+					isAll: function() {
+
+					}
+				};
+
+				$('.demoTable .layui-btn').on('click', function() {
+					var type = $(this).data('type');
+					active[type] ? active[type].call(this) : '';
+				});
+
+				//监听工具条
+				table.on('tool(_table)', function(obj) {
+					var data = obj.data;
+					if(obj.event === 'detail') {
+						//layer.msg('ID：' + data.id + ' 的查看操作');
+						layer.alert('行：<br/>' + JSON.stringify(data))
+					} else if(obj.event === 'del') {
+						layer.confirm('真的删除行么', function(index) {
+
+							$.ajax({
+								dataType: 'json',
+								type: "DELETE",
+								url: basePath + "/actress/" + data.id, //路径  
+								//data: {id:data.id},
+								success: function(ret) { //返回数据根据结果进行相应的处理
+									console.log(ret);
+									if(ret.code == 0) {
+										layer.closeAll('loading');
+										layer.msg(ret.msg, {
+											icon: 6,
+											time: 1200
+										}, function() {
+											var index = parent.layer.getFrameIndex(window.name);
+											parent.layer.close(index);
+											location.href = basePath + '/actress/toIndex?page=' + data.page;
+										});
+									} else {
+										layer.closeAll('loading');
+										layer.msg(ret.msg, {
+											icon: 5,
+											time: 1200
+										});
+									}
+								}
+							});
+							//obj.del();
+							//layer.close(index);
+						});
+					} else if(obj.event === 'edit') {
+						//layer.alert('编辑行：<br/>' + JSON.stringify(data))
+						var index = layer.open({
+							area: ['950px', '400px'],
+							type: 2,
+							
+							content: [basePath + "/actress/toEdit?id=" + data.id, 'yes'] //这里content是一个URL，如果你不想让iframe出现滚动条，你还可以content: ['http://sentsin.com', 'no']
+						});
+						layer.full(index);
+					}
+				});
+				
+		var form = layui.form;
+		//监听锁定操作
+		 //监听锁定操作
+  form.on('checkbox(lockDemo)', function(obj){
+    layer.tips(this.value + ' ' + this.name + '：'+ obj.elem.checked, obj.othis);
+  });
+  
+  
+  layer.photos({
+  photos: '#layer-photos-demo'
+  ,anim: 5 //0-6的选择，指定弹出图片动画类型，默认随机（请注意，3.0之前的版本用shift参数）
+}); 
+
+			});
+		</script>
+		<script type="text/html" id="bar">
+			<a class="layui-btn layui-btn-mini" lay-event="detail">查看</a>
+			<a class="layui-btn layui-btn-mini" lay-event="edit">编辑</a>
+			<a class="layui-btn layui-btn-danger layui-btn-mini" lay-event="del">删除</a>
+
+			<!-- 这里同样支持 laytpl 语法，如： -->
+			{{# if(d.auth > 2){ }}
+			<a class="layui-btn layui-btn-mini" lay-event="check">审核</a>
+			{{# } }}
+		</script>
+		
+<script type="text/html" src="/js/manager/actress/actressList.html"></script>
+<script type="text/html" id="isMy">
+	 {{#  if(d.isMy === 0){ }}
+    <span style="text-align: center;">否</span>
+  {{#  } else { }}
+   <span style="color:#009688;text-align: center;">是</span>
+  {{#  } }}
+	 
+</script>
+
+<script type="text/html" id="img">
+	<div id="layer-photos-demo" class="layer-photos-demo">
+  	<img  height="28" layer-src="http://127.0.0.1:8011/gf/view/5a3087bc851ecc31f44b2ec1" src="http://127.0.0.1:8011/gf/view/5a3087bc851ecc31f44b2ec1" />
+
+</div>
+</script>
+<div id="layer-photos-demo" class="layer-photos-demo">
+  	<img  height="28" layer-src="http://127.0.0.1:8011/gf/view/5a3087bc851ecc31f44b2ec1" src="http://127.0.0.1:8011/gf/view/5a3087bc851ecc31f44b2ec1" />
+
+</div>
+	</body>
+
+</html>

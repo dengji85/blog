@@ -1,0 +1,272 @@
+﻿<!--
+
+ @Name：不落阁后台模板源码
+ @Author：Absolutely
+ @Site：http://www.lyblogs.cn
+
+ -->
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta charset="utf-8" />
+		<title>数据列表页面</title>
+		<!-- layui.css -->
+		<link th:href="@{/plug/layui/css/layui.css}" rel="stylesheet" />
+		<script type="text/javascript" src="/plug/ckeditor/ckeditor.js"></script>
+		<script type="text/javascript" src="/js/jquery-3.2.1.js"></script>
+	</head>
+
+	<body>
+
+		<fieldset class="layui-elem-field">
+			<legend></legend>
+			<div class="layui-field-box">
+				<form class="layui-form" id="formdata" action="">
+					<div class="layui-form-item">
+						<div class="layui-inline">
+							<label class="layui-form-label">名字</label>
+							<div class="layui-input-inline">
+								<input th:value="${actress.actressName}" type="text" name="actressName" lay-verify="required" placeholder="请输入标题" autocomplete="off" class="layui-input" />
+							</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">生日</label>
+
+							<div class="layui-input-block">
+								  <input type="text" name="birthday" id="birthday" th:value="${actress.birthday}" lay-verify="date" placeholder="yyyy-MM-dd" autocomplete="off" class="layui-input"/>
+							</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">臀围</label>
+							<div class="layui-input-inline">
+								<input th:value="${actress.hipline}" type="text" name="hipline" placeholder="" autocomplete="off" class="layui-input" />
+							</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">胸围</label>
+							<div class="layui-input-inline">
+								<input th:value="${actress.bust}" type="text" name="bust" placeholder="" autocomplete="off" class="layui-input" />
+							</div>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-inline">
+							<label class="layui-form-label">腰围</label>
+							<div class="layui-input-inline">
+								<input th:value="${actress.waistline}" type="text" name="waistline"  placeholder="" autocomplete="off" class="layui-input" />
+							</div>
+						</div>
+						<div class="layui-inline">
+							 <label class="layui-form-label">罩杯</label>
+								<div class="layui-input-block">
+									<input th:value="${actress.cup}" type="text" name="cup"  placeholder="" autocomplete="off" class="layui-input" />
+
+								</div>
+						</div>
+						<div class="layui-inline">
+							 <label class="layui-form-label">身高</label>
+								<div class="layui-input-block">
+									<input th:value="${actress.height}" type="text" name="height"  placeholder="" autocomplete="off" class="layui-input" />
+
+								</div>
+						</div>
+						<div class="layui-inline">
+							 <label class="layui-form-label">爱好</label>
+								<div class="layui-input-block">
+									<input th:value="${actress.hobby}" type="text" name="hobby"  placeholder="" autocomplete="off" class="layui-input" />
+
+								</div>
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<div class="layui-inline">
+							<label class="layui-form-label">出生地</label>
+							<div class="layui-input-inline">
+								<input th:value="${actress.homePlace}" type="text" name="homePlace"  placeholder="" autocomplete="off" class="layui-input" />
+							</div>
+						</div>
+						<div class="layui-inline">
+							 <label class="layui-form-label">添加时间</label>
+								<div class="layui-input-block">
+									<input th:value="${actress.addTime}" type="text" name="addTime"  placeholder="" autocomplete="off" class="layui-input" />
+
+								</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">类型</label>
+
+							<div class="layui-input-block">
+								<select lay-verify="required" th:field="*{actress.type}">
+									<option value=""></option>
+									<!--th:if="${article.id==null}"-->
+									<option th:each="type:${types}" th:value="${type.dictCode}" th:text="${type.dictValue}"></option>
+									<!--<option value="0">北京</option>-->
+
+								</select>
+							</div>
+						</div>
+						
+							<div class="layui-inline">
+							<label class="layui-form-label">我是否收录</label>
+								<div class="layui-input-block">
+									<input type="radio" name="isMy" value="0" checked="true" title="否" th:checked="${actress.isMy==0}"/>
+									<input type="radio" name="isMy" value="1" title="是" th:checked="${actress.isMy==1}"/>
+								</div>
+						</div>
+						<div class="layui-inline">
+							<label class="layui-form-label">我的评分</label>
+
+							<div class="layui-input-block">
+									<input th:value="${actress.myStar}" type="text" name="myStar"  placeholder="" autocomplete="off" class="layui-input" />
+							</div>
+						</div>
+						
+					</div>
+					<div class="layui-form-item">
+						
+						
+						<label class="layui-form-label">封面</label>
+
+						<div class="layui-inline">
+							<img height="120px" class="layui-upload-img" th:src="@{/gf/view/{imgId}(imgId=${actress.img})}" id="demo1" />
+							<p id="demoText"></p>
+						</div>
+						<div class="layui-inline">
+							<button type="button" class="layui-btn" id="test1">上传图片</button>
+						</div>
+						<input type="hidden" name="img" id="img" />
+					</div>
+
+					<div class="layui-form-item">
+						<div class="layui-input-block">
+							<button class="layui-btn" lay-submit="" lay-filter="save">立即提交</button>
+							<button type="reset" class="layui-btn layui-btn-primary">重置</button>
+						</div>
+					</div>
+				</form>
+
+			</div>
+		</fieldset>
+
+		<!-- layui.js -->
+		<script src="/plug/layui/layui.js"></script>
+		<!-- layui规范化用法 -->
+		<script>
+			function checkValue(o) {
+
+				alert(o.id);
+
+			}
+
+			//Demo
+			var strFullPath = window.document.location.href;
+			var strPath = window.document.location.pathname;
+			var pos = strFullPath.indexOf(strPath);
+			var prePath = strFullPath.substring(0, pos);
+			var postPath = strPath.substring(0, strPath.substr(1).indexOf('/') + 1);
+			var basePath = prePath;
+			basePath = prePath + postPath;
+
+			function toBack() {
+				//$('iframe',window.parent.document).attr('src',basePath + "/article/toIndex");
+				console.log($('iframe', window.parent.document).attr("src"));
+			}
+			layui.use(['form', 'upload'], function() {
+				var form = layui.form;
+
+				var strFullPath = window.document.location.href;
+				var strPath = window.document.location.pathname;
+				var pos = strFullPath.indexOf(strPath);
+				var prePath = strFullPath.substring(0, pos);
+				var postPath = strPath.substring(0,
+					strPath.substr(1).indexOf('/') + 1);
+				var basePath = prePath;
+				basePath = prePath + postPath;
+
+				//监听提交
+				form.on('submit(save)', function(data) {
+					var stem = CKEDITOR.instances.CKEditor.getData();
+					data.field.content = stem;
+					layer.msg(JSON.stringify(data.field));
+					var type = "";
+					var url = "";
+					console.log(data.field.id);
+					if(data.field.id == "") {
+						type = "post";
+						url = basePath + "/actress/";
+					} else {
+						type = "put";
+						url = basePath + "/actress/" + data.field.id;
+					}
+					$.ajax({
+						dataType: 'json',
+						type: type,
+						url: url, //路径  
+						data: data.field,
+						success: function(ret) { //返回数据根据结果进行相应的处理
+							console.log(ret);
+							if(ret.code == 0) {
+								layer.closeAll('loading');
+								layer.msg(ret.msg, {
+									icon: 6,
+									time: 1200
+								}, function() {
+									var index = parent.layer
+										.getFrameIndex(window.name);
+									parent.layer.close(index);
+									//location.href = basePath + '/article/toIndex';
+									parent.location.reload();
+								});
+							} else {
+								layer.closeAll('loading');
+								layer.msg(ret.msg, {
+									icon: 5,
+									time: 1200
+								});
+							}
+						}
+					});
+					return false;
+				});
+
+				var $ = layui.jquery,
+					upload = layui.upload;
+
+				//普通图片上传
+				var uploadInst = upload.render({
+					elem: '#test1',
+					url: "/gf/upload",
+					before: function(obj) {
+						//预读本地文件示例，不支持ie8
+						obj.preview(function(index, file, result) {
+							$('#demo1').attr('src', result); //图片链接（base64）
+						});
+					},
+					done: function(res) {
+						//如果上传失败
+						if(res.code == 999) {
+							return layer.msg('上传失败');
+						}
+						//上传成功
+						$("#img").val(res.data);
+					},
+					error: function() {
+						//演示失败状态，并实现重传
+						var demoText = $('#demoText');
+						demoText.html('<span style="color: #FF5722;">上传失败</span> <a class="layui-btn layui-btn-mini demo-reload">重试</a>');
+						demoText.find('.demo-reload').on('click', function() {
+							uploadInst.upload();
+						});
+					}
+				});
+
+			});
+		</script>
+
+		<script src="/js/articleInfo.js"></script>
+	</body>
+
+</html>

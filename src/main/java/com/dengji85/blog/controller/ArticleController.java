@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.dengji85.blog.common.AjaxPagerResult;
 import com.dengji85.blog.common.BlogConstants;
@@ -34,7 +35,7 @@ public class ArticleController {
 	private CommonService commonService;
 	private Logger log = Logger.getLogger(getClass());
 
-	@RequestMapping("/page")
+	@RequestMapping(value="/page",method=RequestMethod.GET)
 	public String toIndex(ArticleParam param, ModelMap map) {
 
 		if (null == param) {
@@ -65,7 +66,7 @@ public class ArticleController {
 
 	}
 
-	@RequestMapping("/{id}")
+	@RequestMapping(value="/{id}",method=RequestMethod.GET)
 	public String viewArticleById(ModelMap map, @PathVariable Long id,HttpServletRequest request) {
 		
 		

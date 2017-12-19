@@ -1,16 +1,15 @@
 package com.dengji85.blog.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+
 import com.dengji85.blog.common.AjaxPagerResult;
-import com.dengji85.blog.common.BlogConstants;
-import com.dengji85.blog.model.Article;
 import com.dengji85.blog.param.ArticleParam;
-import com.dengji85.blog.param.DictParam;
 import com.dengji85.blog.resultmap.ArticleResultMap;
 import com.dengji85.blog.service.ArticleService;
 import com.dengji85.blog.service.DictService;
@@ -21,6 +20,7 @@ public class IndexController {
 	private ArticleService articleService;
 	@Autowired
 	private DictService dictService;
+	private Logger log = LoggerFactory.getLogger(getClass()) ;
 
 	@RequestMapping("/")
 	public void index() {
@@ -39,9 +39,9 @@ public class IndexController {
 				.page(param);
 		data.setPage(param.getPage());
 		map.put("articles", data);
+		
+		map.put("hot", this.articleService.getHot(7));
 		return "home";
 	}
-
-	
 
 }

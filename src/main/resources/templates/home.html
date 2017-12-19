@@ -133,10 +133,10 @@
 					<!--占位-->
 					<div class="blog-module shadow">
 						<div class="blog-module-title">热文排行</div>
-						<ul class="fa-ul blog-module-ul">
+						<ul  th:each="hot : ${hot}" class="fa-ul blog-module-ul">
 							<li><i class="fa-li fa fa-hand-o-right"></i> <a
-								href="detail.html">Web安全之跨站请求伪造CSRF</a></li>
-							<li><i class="fa-li fa fa-hand-o-right"></i> <a
+								th:href="@{/article/{id}(id=${hot.id})}" href="detail.html" th:text="${hot.title}">Web安全之跨站请求伪造CSRF</a></li>
+							<!--<li><i class="fa-li fa fa-hand-o-right"></i> <a
 								href="detail.html">ASP.NET MVC 防范跨站请求伪造（CSRF）</a></li>
 							<li><i class="fa-li fa fa-hand-o-right"></i> <a
 								href="detail.html">常用正则表达式</a></li>
@@ -149,7 +149,7 @@
 							<li><i class="fa-li fa fa-hand-o-right"></i> <a
 								href="detail.html">一步步制作时光轴（一）（HTML篇）</a></li>
 							<li><i class="fa-li fa fa-hand-o-right"></i> <a
-								href="detail.html">一步步制作时光轴（二）（CSS篇）</a></li>
+								href="detail.html">一步步制作时光轴（二）（CSS篇）</a></li>-->
 						</ul>
 					</div>
 					<div class="blog-module shadow">

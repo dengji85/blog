@@ -12,9 +12,9 @@ CKEDITOR.editorConfig = function( config ) {
     // 设置宽高
     config.height = 400;
  // 图片上传配置  
-    config.filebrowserUploadUrl = 'http://120.78.168.117:8081/ckedit';  
-    //config.filebrowserImageUploadUrl = 'http://120.78.168.117:8081/ckedit?type=Image'; 
-   config.filebrowserImageUploadUrl = 'http://127.0.0.1:8011/ckedit/uploadImage?type=Image';
+   // config.filebrowserUploadUrl = 'http://120.78.168.117:8011/ckedit/uploadImage';  
+    config.filebrowserImageUploadUrl = 'http://120.78.168.117:8011/ckedit/uploadImage?type=Image'; 
+   //config.filebrowserImageUploadUrl = 'http://127.0.0.1:8011/ckedit/uploadImage?type=Image';
    // config.filebrowserImageUploadUrl = 'http://127.0.0.1:8011/ckedit?type=Image';
    // config.filebrowserFlashUploadUrl = '/upload?type=Flash';  
 

@@ -22,7 +22,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class FileUploadController {
-	@Value("${com.dengji85.uploadpath}")
+	//@Value("${com.dengji85.uploadpath}")
 	private String uploadPath;
 	private static List<String> imgType;
 

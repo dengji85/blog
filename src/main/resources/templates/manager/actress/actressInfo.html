@@ -132,6 +132,7 @@
 							<button type="button" class="layui-btn" id="test1">上传图片</button>
 						</div>
 						<input type="hidden" name="img" id="img" />
+						<input type="hidden" th:value="${actress.id}" name="id" id="id" />
 					</div>
 
 					<div class="layui-form-item">
@@ -182,8 +183,7 @@
 
 				//监听提交
 				form.on('submit(save)', function(data) {
-					var stem = CKEDITOR.instances.CKEditor.getData();
-					data.field.content = stem;
+					
 					layer.msg(JSON.stringify(data.field));
 					var type = "";
 					var url = "";
@@ -211,8 +211,8 @@
 									var index = parent.layer
 										.getFrameIndex(window.name);
 									parent.layer.close(index);
-									//location.href = basePath + '/article/toIndex';
-									parent.location.reload();
+									//location.href = basePath + '/actress/toIndex';
+									//parent.location.reload();
 								});
 							} else {
 								layer.closeAll('loading');

@@ -34,6 +34,7 @@ public class ActressServiceImpl implements ActressService {
 	public AjaxPagerResult<Actress> page(ActressParam param) {
 		AjaxPagerResult<Actress> page = new AjaxPagerResult<>();
 		ActressExample example = new ActressExample();
+		example.setOrderByClause("");
 		RowBounds rowBounds = new RowBounds(param.getOffSet(), param.getLimit());
 		List<Actress> list = this.actressMapper.selectByExampleWithRowbounds(example, rowBounds);
 		page.setCount(this.actressMapper.countByExample(example));
@@ -49,7 +50,7 @@ public class ActressServiceImpl implements ActressService {
 
 	@Override
 	public void updateActress(Actress actress) {
-		// TODO Auto-generated method stub
+		this.actressMapper.updateByPrimaryKeySelective(actress);
 
 	}
 

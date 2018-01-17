@@ -12,11 +12,45 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-    
+<link th:href="@{/plug/layui/css/layui.css}" rel="stylesheet" />
+ <link th:href="@{/css/error/error.css}" href="style.css" rel="stylesheet" type="text/css" />   
 </head>
+
 <body>
-    <h1>Error Handler</h1>
-    <div th:text="${url}"></div>
-    <div th:text="${exception}"></div>
+	<div id="main">
+		<!-- header -->
+		<div id="header">
+			<h1>页面找不到了<span>404 error - not found.</span></h1>
+			
+		</div>
+		<!-- content -->
+		<div id="content">
+			<ul class="nav">
+         	<li class="home"><a th:href="@{/index}" href="#">前往主页</a></li>
+        <!--  <li class="site_map"><a href="#">Site Map</a></li>
+            <li class="search"><a href="#">Website Search</a></li>  -->
+         </ul>
+<!--          <p>This has either been a very unrighteous page or never existed at all. Anyways you'd better not know where it is now.<br /> So why don't you go to our <a href="#">homepage</a>, check out our <a href="#">sitemap</a> or try using the <a href="#">website search</a>.</p>
+ -->
+ 
+ </div>
+ 
+ 
+		<!-- footer -->
+		<div id="footer">
+      <h2 th:text="Message：+${exception}">Message </h2>
+      </div>
+	</div>
+	
+	<!-- layui.js -->
+	<script th:attr="src=@{/plug/layui/layui.js}" src="plug/layui/layui.js"></script>
+	<script>
+//注意：折叠面板 依赖 element 模块，否则无法进行功能性操作
+layui.use('element', function(){
+  var element = layui.element;
+  
+  //…
+});
+</script>
 </body>
 </html>

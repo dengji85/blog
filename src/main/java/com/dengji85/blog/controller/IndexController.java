@@ -43,5 +43,11 @@ public class IndexController {
 		map.put("hot", this.articleService.getHot(7));
 		return "home";
 	}
+	
+	@RequestMapping("/about")
+	public String about(ModelMap map, ArticleParam param) {
+		
+		return "about";
+	}
 
 }

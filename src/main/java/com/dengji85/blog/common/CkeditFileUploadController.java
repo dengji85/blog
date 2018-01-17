@@ -2,6 +2,7 @@ package com.dengji85.blog.common;
 
 import java.io.ByteArrayOutputStream;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
@@ -16,6 +17,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -100,6 +102,22 @@ public class CkeditFileUploadController {
 			out.flush();
 		} catch (Exception e) {
 			e.printStackTrace();
+			
+			
+			
+			
+			try {
+				OutputStream out = response.getOutputStream();
+				out.write(this.getByteArray(new FileInputStream(ResourceUtils.getFile("classpath:static/images/404.jpg"))));
+				out.flush();
+			} catch (FileNotFoundException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			} catch (IOException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+			
 		} finally {
 			if (fis != null) {
 				try {
@@ -137,4 +155,6 @@ public class CkeditFileUploadController {
 		}
 		return datas;
 	}
+	
+	
 }

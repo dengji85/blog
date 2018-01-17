@@ -1,6 +1,8 @@
 package com.dengji85.blog.common;
 
 import java.io.ByteArrayOutputStream;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.security.NoSuchAlgorithmException;
@@ -13,6 +15,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -172,8 +175,13 @@ public class FileGridFsController {
 					.header(HttpHeaders.CONTENT_LENGTH, file.getLength() + "")
 					.header("Connection", "close").body(this.getByteArray(file.getInputStream()));
 		} else {
-			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(
-					"File was not fount");
+			try {
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).header(HttpHeaders.CONTENT_TYPE,"image/jpeg").body(this.getByteArray(new FileInputStream(ResourceUtils.getFile("classpath:static/images/404.jpg"))));
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("File was not fount");
+			}
 		}
 
 	}

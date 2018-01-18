@@ -1,16 +1,17 @@
 package com.dengji85.blog.common;
 
 import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.net.URL;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -176,8 +177,9 @@ public class FileGridFsController {
 					.header("Connection", "close").body(this.getByteArray(file.getInputStream()));
 		} else {
 			try {
-				return ResponseEntity.status(HttpStatus.NOT_FOUND).header(HttpHeaders.CONTENT_TYPE,"image/jpeg").body(this.getByteArray(new FileInputStream(ResourceUtils.getFile("classpath:static/images/404.jpg"))));
-			} catch (FileNotFoundException e) {
+				InputStream in = FileGridFsController.class.getClassLoader().getResourceAsStream("static/images/404.jpg"); 
+				return ResponseEntity.status(HttpStatus.NOT_FOUND).header(HttpHeaders.CONTENT_TYPE,"image/jpeg").body(this.getByteArray(in));
+			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 				return ResponseEntity.status(HttpStatus.NOT_FOUND).body("File was not fount");
@@ -212,4 +214,12 @@ public class FileGridFsController {
 		return datas;
 	}
 
+	
+	public static void main(String[] args) throws Exception {
+		//Resource fileRource = new ClassPathResource("classpath:resources/static/images/404.jpg");
+		InputStream in = FileGridFsController.class.getClassLoader().getResourceAsStream("src/main/static/images/404.jpg"); 
+		URL s = FileGridFsController.class.getClassLoader().getResource("static/images/404.jpg");
+		System.out.println(s);
+		ResourceUtils.getFile("");
+	}
 }

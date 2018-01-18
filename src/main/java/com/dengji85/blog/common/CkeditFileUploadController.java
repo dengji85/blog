@@ -29,6 +29,7 @@ import org.springframework.web.multipart.MultipartFile;
 import com.dengji85.blog.model.File;
 import com.dengji85.blog.service.FileGridFsService;
 import com.mongodb.gridfs.GridFSDBFile;
+
 @RequestMapping("/ckedit")
 @Controller
 @CrossOrigin(origins = "*", maxAge = 3600)
@@ -72,8 +73,8 @@ public class CkeditFileUploadController {
 			StringBuffer sb = new StringBuffer();
 			sb.append("<script type=\"text/javascript\">");
 			sb.append("window.parent.CKEDITOR.tools.callFunction("
-					+ CKEditorFuncNum + ",'" +"http://" +serverAddress+":"+serverPort+"/ckedit/showImage/"
-					+ id + "','')");
+					+ CKEditorFuncNum + ",'" + "http://" + serverAddress + ":"
+					+ serverPort + "/ckedit/showImage/" + id + "','')");
 			sb.append("</script>");
 			System.out.println(sb.toString());
 			out.write(sb.toString());
@@ -102,13 +103,13 @@ public class CkeditFileUploadController {
 			out.flush();
 		} catch (Exception e) {
 			e.printStackTrace();
-			
-			
-			
-			
+
 			try {
 				OutputStream out = response.getOutputStream();
-				out.write(this.getByteArray(new FileInputStream(ResourceUtils.getFile("classpath:static/images/404.jpg"))));
+				out.write(this.getByteArray(this.getClass().getClassLoader()
+						.getResourceAsStream("static/images/404.jpg")
+
+				));
 				out.flush();
 			} catch (FileNotFoundException e1) {
 				// TODO Auto-generated catch block
@@ -117,7 +118,7 @@ public class CkeditFileUploadController {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
-			
+
 		} finally {
 			if (fis != null) {
 				try {
@@ -128,13 +129,13 @@ public class CkeditFileUploadController {
 			}
 		}
 	}
-	
+
 	/**
 	 * 
-	* @Title: getByteArray  
-	* @Description: 流转为byte数组
-	* @return byte[]    返回类型  
-	* @throws
+	 * @Title: getByteArray
+	 * @Description: 流转为byte数组
+	 * @return byte[] 返回类型
+	 * @throws
 	 */
 	public byte[] getByteArray(InputStream in) {
 		byte[] datas = null;
@@ -155,6 +156,5 @@ public class CkeditFileUploadController {
 		}
 		return datas;
 	}
-	
-	
+
 }
